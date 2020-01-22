@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr"><head>
+    <title>Page web de Yann Strozecki</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" media="screen" type="text/css" title="Design" href="style.css">
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script><script src="stages_fichiers/ga.js" type="text/javascript"></script><script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-10924216-1");
+    pageTracker._trackPageview();
+    } catch(err) {}</script></head>
+  
+  
+  <body>
+    <h1> Yann Strozecki </h1>
+    <ul id="onglet">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="textesmaths.html">Research</a></li>
+      <li><a href="enseignement.html">Enseignement</a></li>
+      <li><a href="liens.html">Liens</a></li>
+      <li><a class="courant" href="stages.html">Stages</a></li>
+    </ul>
+
+    <h2>Sujets de stage de Master</h2>
+    
+    <h3>Modèle unifié et algorithmes pour les jeux stochastiques</h3>
+    
+   
+Nous travaillons au laboratoire DAVID sur la théorie algorithmique des jeux. Plus particulièrement nous nous intéressons à des jeux à deux joueurs avec du hasard.
+Le modèle le plus simple de ces jeux est appelé un simple stochastic game (SSG) (introduit dans [1], explication pédagogique dans [2]). Il s'agit de déplacer à tour de rôle un pion sur un graphe orienté sachant que le hasard intervient dans le déplacement du pion. Chaque joueur essaye d'amener le pion sur un sommet différent du graphe. L'objectif est de calculer efficacement les stratégies optimales des joueurs dans un SSG. Ces stratégies maximisent la probabilité d'arriver dans l'état profitable pour chaque joueur. C'est un problème qui est dans NP inter CoNP mais qu'on ne sait pas décider en temps polynomial, ce qui en fait un problème théorique très important. Par ailleurs, il a de nombreuses applications, notamment à la vérification de programmes et à l'optimisation.<p>
+
+Après une revue de la littérature, nous travaillerons à donner un cadre uniforme pour les jeux stochastiques et leurs très nombreuses variantes 
+(jeu stoppant, jeu de temps d'atteinte, jeu de parité, de paiement moyen ...). Il s'agit de considérer des jeux avec seulement deux types de sommets,
+et un seul type de paiement. On veut ainsi définir un modèle suffisamment général pour représenter tous ces jeux et rendre les réductions entre ces différents jeux les plus simple possible. Cela devrait permettre de trouver des propriétés communes du graphe de ces jeux ou des paramètres pour lesquels il existe des algorithmes FPT [3]. On peut aussi essayer de généraliser aux SSG certains contre-exemples existant pour les jeux les plus simples comme les jeux de parité. En particulier on voudrait généraliser l'exemple qui montre que l'algorithme classique de calcul de stratégies optimales de Hoffman Karp (similaire au simplexe) prend un temps exponentiel.<p>
+
+Dans un deuxième temps, nous étudierons une méthode de résolution nouvelle qui fonctionne en résolvant successivement des jeux restreints. On essaiera d'exhiber des classes de jeux pour lesquels cette nouvelle méthode est meilleure que Hoffman Karp ou moins bonne. On pourra aussi essayer de prouver une borne inférieure sur la complexité de cette méthode. 
+Un logiciel en python développé au cours de stages précédents pourra permettre de faire une analyse expérimentale de cet algorithme afin de mieux le comprendre.<p>
+
+
+[1]: The complexity of stochastic games, Anne Condon.<br>
+[2]: On strategy improvement algorithms for simple stochastic games, Tripathi, Rahul and Valkanova, Elena and Anil Kumar, VS.<br>
+[3]: Finding Optimal Strategies of Almost Acyclic Simple Stochatic Games, David Auger, Pierre Coucheney, Yann Strozecki<br>
+    
+    <h3>Complexité d'énumération : liens avec la génération aléatoire</h3>
+    
+   ﻿Laboratoire : DAVID, Université de Versailles Saint-Quentin
+Encadrant : Yann Strozecki(http://www.prism.uvsq.fr/~ystr/)
+
+En complexité on s'intéresse généralement au temps nécessaire pour décider si un problème a une solution et éventuellement la produire. 
+La complexité d’énumération étudie les algorithmes qui produisent toutes les solutions d’un problème, par exemple l'ensemble des tris topologiques d'un graphe, ou un ensemble d'objets combinatoires, par exemple les arbres d'une taille donnée. Dans ce contexte on étudie la dynamique de l’algorithme c’est-à-dire le délai entre la production de deux solutions. Un problème d'énumération est résolu efficacement si il existe un algorithme avec délai et mémoire polynomiale en l'entrée qui produit son ensemble de solutions.<p>
+
+Les problèmes d'énumération apparaissent naturellement quand on s'intéresse à l'optimisation, aux requêtes sur les bases de données ou au comptage. Il s'agit ici d'étudier leur complexité d'un point de vue théorique. On obtient parfois des résultats étonnants, par exemple trouver un couplage parfait dans un graphe est facile, compter leur nombre est difficile et tous les produire est facile. Énumérer les ensembles indépendants maximaux d'un graphe dans l'ordre lexicographique est facile mais est dur dans l'ordre anti-lexicographique.<p>
+
+Dans ce stage on voudrait décrire des mécaniques pour généraliser des algorithmes efficaces d'énumération. L'idée est d'essayer de combiner des problèmes qu'on sait résoudre efficacement pour obtenir des problèmes plus compliqués qu'on saurait ainsi automatiquement résoudre. Par exemple le produit cartésien ou l'union de deux ensembles faciles à énumérer sont faciles à énumérer mais ça n'est pas le cas de leur intersection ou de leur différence [1].<p>
+
+Ce genre de méthode est connue dans le domaine du comptage de structures combinatoires et de la génération uniforme de ces structures.
+Certains objets très simples admettent des générateurs uniformes et une grammaire dont les opérations comprennent justement l'union et le produit cartésien permettent de construire de nombreuses classe d'objets ainsi que le générateur uniforme associé.
+Ces générateurs s'appellent des Boltzman samplers [2].On voudrait répliquer cette approche pour l'énumération exhaustive d'objets, éventuellement en l'implémentant et en évaluant automatiquement le délai. <p>
+
+En général, il serait intéressant d'approfondir les relations entre génération uniforme, comptage approchée et énumération exhaustive ou approchée. Un travail récent [3] a montré que l'existence d'un générateur uniforme implique l'existence d'un algorithme d'énumération randomisé avec un bon délai et une mémoire exponentielle. On peut également obtenir une mémoire polynomiale, au prix d'un délai plus grand (incrémental). Il serait intéressant de trouver des propriétés de certains générateurs aléatoires qui permettent d'obtenir à la fois délai et mémoire polynomiale et de déterminiser ces alorithmes, par exemple en utilisant des séquences universelles qui permettent de faire un parcours du graphe des solutions sans utiliser de mémoire. <p>
+
+Ce travail sera fait dans le cadre du projet ANR AGGREG.<p>
+
+[1]:Yann Strozecki. Enumeration complexity and matroid decomposition. PhD thesis<br>
+[2]:Philippe Duchon, Philippe Flajolet, Guy Louchard, and Gilles Schaeffer. Boltzmann samplers for the random generation of combinatorial structures<br>
+[3]:Florent Capelli, Yann Strozecki. On the Complexity of Enumeration
+
+
+
+
+    
+    <h3>Algorithmique de graphes pour la cheminformatique</h3>
+
+    Ce stage peut facilement être adapté à des étudiants de niveau L3 à M2.<br><br>
+
+    
+Pour aider les chimistes à concevoir des molécules, nous avons conçu un logiciel qui permet de générer celles qu'on peut obtenir à partir de constituants simples en les assemblants comme un puzzle.  Ces constituants sont modélisés par des graphes planaires colorés de petite taille et de petit degré et ils se combinent avec des contraintes pour faire des graphes (représentant des molécules) de plus grande taille.
+Plusieurs phases importantes de l'algorithme de génération restent à améliorer tant du point de vue théorique que pratique (implémentation efficace et parallèle en C). Un stage consistera à l'étude d'un des trois points suivants.<p>
+
+La première phase de génération d'arbre couvrant colorié de la molécule finale n'est pas optimale. En effet, les arbres sont générés de manière redondante (autant de fois que la taille de l'arbre) alors qu'il existe des méthodes classiques [2] qui permettent de générer un ensemble d'abres de taille donnée en temps constant par arbre généré. Il s'agit d'adapter ces méthodes au cas colorié (avec des contraintes sur les connections entre couleurs) et au fait que nous avons un ordre fixé sur les arêtes d'un sommet (cela simplifie le problème). On implémentera l'algorithme obtenu pour le comparer à l'agorithme naïf actuel.<p>
+
+Le deuxième point important est la détection des graphes qui sont générés deux fois, c'est à dire le calcul de l'isomorphisme de graphe.
+C'est un problème dur à résoudre en théorie mais pour lequel il existe de bons algorithmes en pratique. Dans le cas des graphes planaires que nous traitons il est polynomial et même linéaire mais les algorithmes efficaces en pratique sont quadratiques.
+Un travail a déjà été entamé pour comparer les différentes méthodes et heuristiques efficaces pour des graphes de petite taille.
+Il s'agit d'améliorer ces heuristiques et de comparer systématiquement leur efficacité sur des jeux de test, voir d'expliquer leur complexité en moyenne en étudiant des modèles de graphes aléatoires. Une comparaison à l'état de l'art, c'est à dire le logiciel nauty de Mc Kay serait également à mener. <p>
+
+Enfin, une fois les graphes construits, il faut calculer certaines de leurs caractéristiques pour que les chimistes puissent choisir les graphes les plus plausibles. Le critère le plus important est l'indice de coupe d'un graphe qui mesure la solidité de la molécule correspondante. Cet indice est défini comme le minimum sur toute partition des sommets du graphe en S_1 et S_2, du nombre d'arêtes entre S_1 et S_2 divisés par |S_1||S_2|. Ce problème est NP-dur et difficile à approximmer avec un facteur constant. Pour des graphes planaires, il existe un algorithme polynomial [3] que nous avons implémenté. Néanmoins, cette étape reste encore extrêmement couteuse, et il s'agit de l'améliorer soit par de nouvelles méthodes algorithmiques, soit par des heuristiques, soit en spécialisant l'algorithme à nos graphes qui ont une structure particulière. On peut aussi essayer de paralléliser le calcul ou de modifier la mesure pour la rendre plus simple à calculer. <p>
+
+
+[1]:  Dominique Barth, Olivier David, Franck Quessette, Vincent Reinhard, Yann Strozecki, Sandrine Vial : Efficient Generation of Stable Planar Cages for Chemistry<br>
+[2]: Li, G., Ruskey, F.: The advantages of forward thinking in generating rooted and free trees<br>
+[3]: Park, J.K., Phillips, C.A.: Finding minimum-quotient cuts in planar graphs<br>
+
+    <h3>Décomposition de structures</h3>
+
+
+    De bonnes notions de décomposition de graphe comme la tree width qui
+ capture la distance d'un graphe à un arbre existent depuis plus de 
+trente ans.
+    Ces notions permettent entre autre de donner des algorithmes 
+efficaces pour des problèmes NP durs en général quand on restreint les 
+graphes
+    à être décomposable. Pour des structures plus compliqués comme des 
+relations qui lient k éléments ou des hypergraphes dont les arêtes sont 
+non bornées,
+    de telles notion de décomposition existent mais elle sont moins 
+satifaisantes. Il s'agit dans ce travail de généraliser la notions 
+classique de clique-width à des relations et des hypergraphes.
+    Ces objets sont alors représentés par un terme qui représentent les 
+opérations qui collent des petits morceaux de structures pour former une
+ plus grosse structure. Dans un  <a href="hypergraph_decomposition.pdf">travail préliminaire </a>
+ on introduit une notion de décomposition complétement générique sur les
+ hypergraphes. De nombreuses questions sur ses relations avec les 
+décompositions classiques (de relations, de graphes, de matroïdes ...) 
+se posent et permettront au stagiaire de se familiariser avec ce 
+domaine. Plusieurs thèmes pourront être explorés :
+    <ul>
+      <li>  La relation entre les notions d'acyclicité d'hypergraphe et cette décomposition. </li>
+      <li> Le calcul efficace d'opérations d'hypergraphes directement 
+sur cette représentation implicite plutôt que sur l'hypergraphe qui peut
+ être beaucoup plus gros.</li>
+      <li> La recherche de restrictions à cette définition générique 
+afin qu'elle admette de bonnes propriétés par rapport aux opérations 
+classiques ou afin de la rendre facilement calculable.  </li>
+      <li> L'utilisation de cette décomposition pour trouver des 
+algorithmes efficaces pour des problèmes d'hypergraphes qui seraient 
+autrement NP-durs. </li>
+    </ul>
+   
+
+
+</body></html>

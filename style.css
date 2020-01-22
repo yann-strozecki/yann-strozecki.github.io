@@ -1,0 +1,84 @@
+body
+{
+max-width: 1024px;
+margin: auto;
+font-family:Verdana, Geneva, sans-serif;
+font-size:13px;
+}
+
+
+h1
+{
+	text-align:center;
+	color:Navy;
+	border-width:5px 5px 5px 5px;
+        border-style:solid;
+        border-color:Navy;
+        padding: 10px 5px ;
+	background-color:#fff;
+}
+
+h2
+{
+	color:#000;
+}
+
+
+a[href]
+{
+text-decoration:none;
+color:MediumBlue;
+}
+
+
+
+#onglet {
+padding: 3px 0;
+margin-left: 0;
+margin-bottom: 0;
+margin-top: 0.1em;
+font: bold 14px Verdana;
+border-bottom: 2px solid navy;
+}
+
+		
+#onglet li{
+list-style: none;
+display: inline;
+margin: 0;
+}
+
+#onglet li a{
+color: navy;
+text-decoration: none;
+padding: 5px 0.5em;
+margin-right: 5px;
+border: 2px solid navy;
+border-bottom: none;
+background: white;
+}
+
+#onglet li a:link, # onglet li a:visited{
+color: #039;
+}
+
+#onglet li a:hover{
+color: #039;
+background: LightSteelBlue;
+border-color: navy;
+}
+
+#onglet li a.courant{
+background: LightSteelBlue;
+}
+
+photoagauche {
+border : 5px solid #b0b0b0;
+float : left;
+margin : 5px 15px 6px;
+margin-bottom : 15px;
+}
+ 
+
+
+

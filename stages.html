@@ -25,19 +25,18 @@
     
    
 Nous travaillons au laboratoire DAVID sur la théorie algorithmique des jeux. Plus particulièrement nous nous intéressons à des jeux à deux joueurs avec du hasard.
-Le modèle le plus simple de ces jeux est appelé un simple stochastic game (SSG) (introduit dans [1], explication pédagogique dans [2]). Il s'agit de déplacer à tour de rôle un pion sur un graphe orienté sachant que le hasard intervient dans le déplacement du pion. Chaque joueur essaye d'amener le pion sur un sommet différent du graphe. L'objectif est de calculer efficacement les stratégies optimales des joueurs dans un SSG. Ces stratégies maximisent la probabilité d'arriver dans l'état profitable pour chaque joueur. C'est un problème qui est dans NP inter CoNP mais qu'on ne sait pas décider en temps polynomial, ce qui en fait un problème théorique très important. Par ailleurs, il a de nombreuses applications, notamment à la vérification de programmes et à l'optimisation.<p>
+Le modèle le plus simple de ces jeux est appelé jeu stochastique simple (SSG) (introduit dans [1], explication pédagogique dans [2]). Il s'agit de déplacer à tour de rôle un pion sur un graphe orienté sachant que le hasard intervient dans le déplacement du pion. Chaque joueur essaye d'amener le pion sur un sommet différent du graphe. L'objectif est de calculer efficacement les stratégies optimales des joueurs dans un SSG. Ces stratégies maximisent la probabilité d'arriver dans l'état profitable pour chaque joueur. C'est un problème qui est dans NP inter CoNP mais qu'on ne sait pas décider en temps polynomial, ce qui en fait un problème théorique très important. Par ailleurs, il a de nombreuses applications, notamment à la vérification de programmes et à l'optimisation.<p>
 
-Après une revue de la littérature, nous travaillerons à donner un cadre uniforme pour les jeux stochastiques et leurs très nombreuses variantes 
-(jeu stoppant, jeu de temps d'atteinte, jeu de parité, de paiement moyen ...). Il s'agit de considérer des jeux avec seulement deux types de sommets,
-et un seul type de paiement. On veut ainsi définir un modèle suffisamment général pour représenter tous ces jeux et rendre les réductions entre ces différents jeux les plus simple possible. Cela devrait permettre de trouver des propriétés communes du graphe de ces jeux ou des paramètres pour lesquels il existe des algorithmes FPT [3]. On peut aussi essayer de généraliser aux SSG certains contre-exemples existant pour les jeux les plus simples comme les jeux de parité. En particulier on voudrait généraliser l'exemple qui montre que l'algorithme classique de calcul de stratégies optimales de Hoffman Karp (similaire au simplexe) prend un temps exponentiel.<p>
 
-Dans un deuxième temps, nous étudierons une méthode de résolution nouvelle qui fonctionne en résolvant successivement des jeux restreints. On essaiera d'exhiber des classes de jeux pour lesquels cette nouvelle méthode est meilleure que Hoffman Karp ou moins bonne. On pourra aussi essayer de prouver une borne inférieure sur la complexité de cette méthode. 
-Un logiciel en python développé au cours de stages précédents pourra permettre de faire une analyse expérimentale de cet algorithme afin de mieux le comprendre.<p>
+Nous étudierons une méthode de résolution nouvelle [3] qui fonctionne en résolvant successivement des jeux ou certaines arêtes sont restreintes. Cette méthode peut être instanciée de plein d manière différente et on étudiera certaines de ses variantes, comme les restrictions à des DAGs ou à des jeux de petits horizons. 
+On essaiera d'exhiber des classes de jeux pour lesquels certaine de ces algorithmes sont meilleurs que les méthodes classiques et d'affiner l'analyse de leur complexité. On pourra aussi essayer de prouver une borne inférieure sur la complexité de cette méthode (connue pour certaines variantes mais pas générale). Enfin, on implémentera ces méthodes
+pour les évaluer expérimentalement par rapport aux implémentations les plus performantes actuellement [4].<p>
 
 
 [1]: The complexity of stochastic games, Anne Condon.<br>
 [2]: On strategy improvement algorithms for simple stochastic games, Tripathi, Rahul and Valkanova, Elena and Anil Kumar, VS.<br>
-[3]: Finding Optimal Strategies of Almost Acyclic Simple Stochatic Games, David Auger, Pierre Coucheney, Yann Strozecki<br>
+[3]: A Generic Strategy Iteration Method for Simple Stochastic Games, David Auger, Xavier Badin de Montjoye, Yann Strozecki<br>
+[4]:Jan Křetínsky, Emanuel Ramneantu, Alexander Slivinskiy, and Maximilian Weininger. Comparison of algorithms for simple stochastic games.<br>
     
     <h3>Complexité d'énumération : liens avec la génération aléatoire</h3>
     

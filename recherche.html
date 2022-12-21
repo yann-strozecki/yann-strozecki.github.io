@@ -1,0 +1,1112 @@
+<!DOCTYPE html >
+  <head>
+    <title>Page web de Yann Strozecki</title>
+    <meta http-equiv="Content-Type" content="text/html" charset = "utf-8" lang= "fr"/>
+    <link rel="stylesheet" media="screen" type="text/css" title="Design" href="style.css" />
+  </head>
+  <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-10924216-1");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
+  
+  <script type="text/javascript"
+	  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <script type="text/javascript" src="jquery.js" charset="utf-8"></script>
+  <script type="text/javascript" src="thickbox.js" charset="utf-8"></script>
+  <script type="text/javascript">                                         
+    $(document).ready(function() {
+    $(".script_show").show();
+    $(".script_hide").hide();
+    $(".bibtex").hide();
+    $(".abstract").hide();
+    //on page load call tb_init
+    tb_init('ul.figure > li > a');//pass where to apply thickbox
+    imgLoader = new Image(); // preload loading image
+    imgLoader.src = tb_pathToImage;
+    imgLoader2 = new Image(); // preload transparent background image
+    imgLoader2.src = 'images/macFFBgHack.png';
+    });
+  </script>
+  <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-10924216-1");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
+  <body>
+    <h1> Yann Strozecki </h1>
+    <ul id="onglet">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a class="courant" href="recherche.html">Research</a></li>
+      <!--<li><a href="enseignement.html">Enseignement</a></li>-->
+      <li><a href="liens.html">Liens</a></li>
+      <!--<li><a href="stages.html">Stages</a></li>-->
+    </ul>
+
+
+
+    <ul>
+      <li> <a href= "#Submitted Papers">Submitted Papers</a></li>
+      <li> <a href= "#Published Papers">Published Papers</a></li>
+      <li> <a href= "#Manuscripts">Manuscripts</a></li>
+      <li> <a href= "#Presentations">Presentations</a></li>
+      <li> <a href= "#Miscellaneous">Miscellaneous</a></li>
+    </ul>
+
+
+    <h2><span><a name ="Submitted Papers">Working Papers and Submitted Papers</a></span></h2>
+    <ul>
+      </br>
+      <li> A <a href="https://arxiv.org/abs/2108.10208">paper</a> on geometric amortization of enumeration algorithm in incremental time to obtain a polynomial delay and space.
+      See <a href="http://florent.capelli.me/coussinet/coussinet.html"> Coussinet </a> 
+      a web-app simulating the geometric amortization algorithm.
+        </li>
+      <li> A <a href="https://arxiv.org/abs/2002.07606">paper</a> on finding periodic schedules for messages going back and forth on a single shared link without using waiting time. <a href="Greedy.zip">Source code</a> of the simulations.</li>
+      <li>A <a href="https://arxiv.org/abs/1801.07029">detailed study</a> of the case with waiting time, extending the results of the ICT paper "Deterministic Scheduling of Periodic Messages for Cloud RAN".</li>
+      <li> The use in chemistry of our tool for the generation of planar graphs with constraints: see the following <a href= "Insilico.pdf">working paper</a>. </li>
+      <li>Decomposition-width: extending clique-width to hypergraphs. Extension of chapter 6 of my PHD's thesis. <a href="hypergraph_decomposition.pdf">Short version</a>.</li>
+   </ul>
+
+<h2><a name="Published Papers">Published Papers</a></h2>
+
+
+<b>"Geometric Amortization of Enumeration Algorithms"</b>,<br/>
+Florent Capelli, Yann Strozecki, STACS 2022.
+
+<br> [ <a href="https://arxiv.org/abs/2108.10208"  target="_blank">ArXiv</a> |
+      <a href="http://florent.capelli.me/coussinet/"  target="_blank">Demo</a>|
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#CS22_bibtex').slideUp('fast'); $('#CS22_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#CS22_abstract').slideUp('fast'); $('#CS22_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="CS22_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+    In this paper, we introduce the technique of geometric amortization for enumeration algorithms. This technique can be used to make the delay of enumeration algorithms more regular without much overhead on the space it uses. More precisely, we are interested in enumeration algorithms having incremental linear delay, that is, algorithms enumerating a set A of size K such that for every t≤K, it outputs at least t solutions in time O(tp), where p is the incremental delay of the algorithm. While it is folklore that one can transform such an algorithm into an algorithm with delay O(p), the naive transformation may blow the space exponentially. We show that, using geometric amortization, such an algorithm can be transformed into an algorithm with delay O(plogK) and O(slogK) space, where s is the space used by the original algorithm.
+    We apply geometric amortization to show that one can trade the delay of flashlight search algorithms for their average delay modulo a factor of O(logK). We illustrate how this tradeoff may be advantageous for the enumeration of solutions of DNF formulas.  
+    </div>
+    <div style="display: none;" id="CS22_bibtex" class="bibtex">
+    <h4 style="display: none;" class="script_hide">BibTeX</h4>
+    <pre>
+  @inproceedings{capelli2021geometric,
+  title={Geometric Amortization of Enumeration Algorithms},
+  author={Capelli, Florent and Strozecki, Yann},
+  booktitle={40th Symposium on Theoretical Aspects of Computer Science},
+  year={2022}
+}
+
+}
+  </pre>
+    </div>
+    <br /><br>
+
+
+<b>"A Generic Strategy Improvement Method for Simple Stochastic Games"</b>,<br/>
+David Auger, Xavier Badin de Montjoye, Yann Strozecki, MFCS 2021.
+
+<br> [ <a href="https://arxiv.org/abs/2102.04922"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#ABS21_bibtex').slideUp('fast'); $('#ABS21_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#ABS21_abstract').slideUp('fast'); $('#ABS21_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="ABS21_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+       We present a generic strategy iteration algorithm (GSIA) to find an optimal strategy of a simple stochastic game (SSG). We prove the correctness of GSIA, and derive a general complexity bound, which implies and improves on the results of several articles. First, we remove the assumption that the SSG is stopping, which is usually obtained by a polynomial blowup of the game. Second, we prove a tight bound on the denominator of the values associated to a strategy, and use it to prove that all strategy iteration algorithms are in fact fixed parameter tractable in the number of random vertices. All known strategy iteration algorithms can be seen as instances of GSIA, which allows to analyze the complexity of converge from below by Condon and to propose a class of algorithms generalising Gimbert and Horn's algorithm. These algorithms require less than r! iterations in general and less iterations than the current best deterministic algorithm for binary SSGs given by Ibsen-Jensen and Miltersen.   
+    </div>
+    <div style="display: none;" id="ABS21_bibtex" class="bibtex">
+    <h4 style="display: none;" class="script_hide">BibTeX</h4>
+    <pre>
+@article{auger2021generic,
+  title={A Generic Strategy Iteration Method for Simple Stochastic Games},
+  author={Auger, David and de Montjoye, X Badin and Strozecki, Yann},
+  journal={Mathematical Foundations of Computer Science},
+  year={2021}
+}
+  </pre>
+    </div>
+    <br /><br>
+
+<b>"Computing the multilinear factors of lacunary polynomials without heights"</b>,<br/>
+Arkadev Chattopadhyay, Bruno Grenet, Pascal Koiran, Natacha Portier and Yann Strozecki,  Journal of symbolic computation 2021.
+
+<br> [ <a href="https://arxiv.org/abs/1311.5694"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#CGKPS20_bibtex').slideUp('fast'); $('#CGKPS20_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#CGKPS20_abstract').slideUp('fast'); $('#CGKPS20_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="CGKPS20_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+       We present a deterministic polynomial-time algorithm which computes the multilinear factors of multivariate lacunary polynomials over number fields. It is based on a new Gap theorem which allows to test whether P(X)=∑kj=1ajXαj(vX+t)βj(uX+w)γj is identically zero in polynomial time. Previous algorithms for this task were based on Gap Theorems expressed in terms of the height of the coefficients. Our Gap Theorem is based on the valuation of the polynomial and is valid for any field of characteristic zero. As a consequence we obtain a faster and more elementary algorithm. Furthermore, we can partially extend the algorithm to other situations, such as absolute and approximate factorizations.
+	   We also give a version of our Gap Theorem valid for fields of large characteristic, and deduce a randomized polynomial-time algorithm to compute multilinear factors with at least three monomials of multivariate lacunary polynomials of finite fields of large characteristic. We provide 𝖭𝖯-hardness results to explain our inability to compute binomial factors.   
+    </div>
+    <div style="display: none;" id="CGKPS20_bibtex" class="bibtex">
+    <h4 style="display: none;" class="script_hide">BibTeX</h4>
+    <pre>
+@article{chattopadhyay2021computing,
+  title={Computing the multilinear factors of lacunary polynomials without heights},
+  author={Chattopadhyay, Arkadev and Grenet, Bruno and Koiran, Pascal and Portier, Natacha and Strozecki, Yann},
+  journal={Journal of Symbolic Computation},
+  volume={104},
+  pages={183--206},
+  year={2021},
+  publisher={Elsevier}
+}
+	</pre>
+    </div>
+    <br /><br>
+
+<b>"Enumerating models of DNF faster: breaking the dependency on the formula size"</b>,<br/>
+Florent Capelli and Yann Strozecki,  Discrete Applied Mathematics 2020.
+
+<br> [ <a href="https://arxiv.org/abs/1810.04006"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#CS20_bibtex').slideUp('fast'); $('#CS20_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#CS20_abstract').slideUp('fast'); $('#CS20_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="CS20_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+       In this article, we study the problem of enumerating the models of DNF formulas. The aim is to provide enumeration algorithms with a delay that depends polynomially on the size of each model and not on the size of the formula, which can be exponentially larger. We succeed for two subclasses of DNF formulas: we provide a constant delay algorithm for k-DNF with fixed k by an appropriate amortization method and we give a quadratic delay algorithm for monotone formulas. We then focus on the \emph{average delay} of enumeration algorithms and show how to obtain a sublinear delay in the formula size.  
+    </div>
+    <div style="display: none;" id="CS20_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@article{capelli2020enumerating,
+  title={Enumerating models of DNF faster: Breaking the dependency on the formula size},
+  author={Capelli, Florent and Strozecki, Yann},
+  journal={Discrete Applied Mathematics},
+  year={2020},
+  publisher={Elsevier}
+}
+</pre>
+
+      </div><br />
+      <br>
+
+
+<b>"Enumeration Complexity"</b>,<br/>
+Yann Strozecki,  Bulletin of EATCS 2019.
+
+<br>[<a href="http://eatcs.org/beatcs/index.php/beatcs/article/view/596"  target="_blank">Article</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#S19_bibtex').slideUp('fast'); $('#S19_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#S19_abstract').slideUp('fast'); $('#S19_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="S19_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>    
+An enumeration problem is the task of listing a set of elements without redundancies, usually the solutions of some combinatorial problem. The enumeration of cycles in a graph appeared already 50 years ago [96], while fundamental complexity notions for enumeration have been proposed 30 years ago by Johnson, Yannakakis and Papadimitriou [65]. Nowadays several research communities are working on enumeration from di↵erent point of views: graph algorithms, parametrized complexity, exact exponential algorithms, logic, database, enumerative combinatorics, applied algorithms to bioinformatics, cheminformatics, networks...
+
+In the last ten years, the topic has attracted more attention and these different communities began to share their ideas and problems, as exemplified by two recent Dagstuhl workshops “Algorithmic Enumeration: Output-sensitive, Input-Sensitive, Parameterized, Approximative” and “Enumeration in Data Management” or the creation of Wikipedia pages for enumeration complexity and algorithms.
+
+In this column, we focus on the structural complexity of enumeration, trying to capture different notions of tractability. The beautiful algorithmic methods used to solve enumeration problems are only briefly mentioned when relevant and would require another column. Much of what is presented here is inspired by several PhD theses and articles [94, 17, 78, 77], in particular a good part of this text is borrowed from [21, 20].
+
+    </div>
+    <div style="display: none;" id="S19_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@article{strozecki2019enumeration,
+  title={Enumeration Complexity},
+  author={Strozecki, Yann and others},
+  journal={Bulletin of EATCS},
+  volume={1},
+  number={129},
+  year={2019}
+}
+</pre>
+
+      </div><br />
+      <br>
+
+
+
+
+<b>"Deterministic Contention Management for Low Latency Cloud RAN over an Optical Ring"</b>,<br/>
+Dominique Barth, Maël Guiraud and Yann Strozecki,  ONDM 2019.
+
+<br>[ <a  href="NGREEN_latency.zip"> Code source </a> | <a href="https://arxiv.org/abs/1902.03018"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#BGS19_bibtex').slideUp('fast'); $('#BGS19_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#BGS19_abstract').slideUp('fast'); $('#BGS19_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="BGS19_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+      The N-GREEN project has for goal to design a low cost optical ring technology with good performances (throughput, latency...) without using expensive end-to-end connections. We study the compatibility of such a technology with the development of the Cloud RAN, a latency critical application which is a major aspect of 5G deployment. We show that deterministically managing Cloud RAN traffic minimizes its latency while also improving the latency of the other traffics. 
+    </div>
+    <div style="display: none;" id="BGS19_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@inproceedings{DBLP:conf/ondm/BarthGS19,
+  author    = {Dominique Barth and
+               Ma{\"{e}}l Guiraud and
+               Yann Strozecki},
+  title     = {Deterministic Contention Management for Low Latency Cloud {RAN} over
+               an Optical Ring},
+  booktitle = {Optical Network Design and Modeling - 23rd {IFIP} {WG} 6.10 International
+               Conference, {ONDM} 2019, Athens, Greece, May 13-16, 2019, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {11616},
+  pages     = {479--491},
+  publisher = {Springer},
+  year      = {2019},
+}
+</pre>
+
+      </div><br />
+      <br>
+
+<b>"Efficient enumeration of solutions produced by closure operations."</b>,<br/>
+Arnaud Mary and Yann Strozecki,  DMTCS 2019.<br/>
+Long version of the STACS paper on polynomial delay for saturation algorithms, with many improvements and the case of enumeration of maximal objects. Some ideas were presented at WEPA, see <a href="wepa.pdf">this extended abstract</a>.
+
+<br>[ <a href="https://arxiv.org/abs/1712.03714"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#SM19_bibtex').slideUp('fast'); $('#SM19_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#SM19_abstract').slideUp('fast'); $('#SM19_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="SM19_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+    In this paper we address the problem of generating all elements obtained by the saturation of an initial set by some operations. More precisely, we prove that we can generate the closure of a boolean relation (a set of boolean vectors) by polymorphisms with a polynomial delay. Therefore we can compute with polynomial delay the closure of a family of sets by any set of "set operations": union, intersection, symmetric difference, subsets, supersets …). To do so, we study the MembershipF problem: for a set of operations F, decide whether an element belongs to the closure by F of a family of elements. In the boolean case, we prove that MembershipF is in P for any set of boolean operations F. When the input vectors are over a domain larger than two elements, we prove that the generic enumeration method fails, since MembershipF is NP-hard for some F. We also study the problem of generating minimal or maximal elements of closures and prove that some of them are related to well known enumeration problems such as the enumeration of the circuits of a matroid or the enumeration of maximal independent sets of a hypergraph. This article improves on previous works of the same authors. 
+    </div>
+    <div style="display: none;" id="SM19_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@article{MaryS19,
+	author    = {Arnaud Mary and Yann Strozecki},
+    title     = {Efficient enumeration of solutions produced by closure operations},
+    journal   = {Discrete Mathematics {\&} Theoretical Computer Science},
+    volume    = {21},
+    number    = {3},
+    year      = {2019},
+}
+</pre>
+
+      </div><br />
+      <br>
+
+<b>"Solving Simple Stochastic Games with few Random Nodes faster using Bland's Rule"</b>,<br/>
+David Auger, Pierre Coucheney and Yann Strozecki,  STACS 2019.
+
+<br>[ <a href="https://arxiv.org/abs/1901.05316"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#A19_bibtex').slideUp('fast'); $('#A19_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#A19_abstract').slideUp('fast'); $('#A19_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="A19_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+    The best algorithm so far for solving Simple Stochastic Games is Ludwig's randomized algorithm which works in expected 2^O(\sqrt(n) time. We first give a simpler iterative variant of this algorithm, using Bland's rule from the simplex algorithm, which uses exponentially less random bits than Ludwig's version. Then, we show how to adapt this method to the algorithm of Gimbert and Horn whose worst case complexity is O(k!), where k is the number of random nodes. Our algorithm has an expected running time of 2^O(k), and works for general random nodes with arbitrary outdegree and probability distribution on outgoing arcs. 
+    </div>
+    <div style="display: none;" id="A19_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@article{auger2019solving,
+	author    = {David Auger and Pierre Coucheney and Yann Strozecki},
+  title     = {Solving Simple Stochastic Games with Few Random Nodes Faster Using
+               Bland's Rule},
+  booktitle = {36th International Symposium on Theoretical Aspects of Computer Science,
+               {STACS} 2019, March 13-16, 2019, Berlin, Germany},
+  series    = {LIPIcs},
+  volume    = {126},
+  pages     = {9:1--9:16},
+  year      = {2019},
+}
+</pre>
+
+      </div><br />
+      <br>
+
+<b>"Incremental delay enumeration: Space and time"</b>,<br/>
+Florent Capelli and Yann Strozecki,  Discrete Applied Mathematics 2019.
+
+<br>[<a href="https://arxiv.org/abs/1703.01928"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#S18_bibtex').slideUp('fast'); $('#S18_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#S18_abstract').slideUp('fast'); $('#S18_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="S18_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+    We investigate the relationship between several enumeration complexity classes and focus in particular on problems having enumeration algorithms with incremental and polynomial delay (IncP and DelayP respectively). We show that, for some algorithms, we can turn an average delay into a worst case delay without increasing the space complexity, suggesting that IncP1 = DelayP even with polynomially bounded space. We use the Exponential Time Hypothesis to exhibit a strict hierarchy inside IncP which gives the first separation  of DelayP and IncP. Finally we relate the uniform generation of solutions to probabilistic enumeration algorithms with polynomial delay and polynomial space. 
+    </div>
+    <div style="display: none;" id="S18_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@article{capelli2018incremental,
+	author    = {Florent Capelli and
+               Yann Strozecki},
+    title     = {Incremental delay enumeration: Space and time},
+    journal   = {Discret. Appl. Math.},
+    volume    = {268},
+    pages     = {179--190},
+    year      = {2019},
+	</pre>
+
+      </div><br />
+      <br>
+
+
+<b>"Deterministic Scheduling of Periodic Messages for Cloud RAN"</b>,<br/>
+Dominique Barth, Maël Guiraud, Brice Leclerc, Olivier Marce,
+Yann Strozecki, ICT 2018.
+
+<br>[ <a  href="Sources_latency.zip"> Code source </a> | <a  href="ICT.pdf"> Pdf</a> | 
+  <a href="https://arxiv.org/abs/1801.07029"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#S1806_bibtex').slideUp('fast'); $('#S1806_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#S1806_abstract').slideUp('fast'); $('#S1806_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="S1806_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+    ABSTRACT="A recent trend in mobile networks is to centralize in distant data-centers
+the processing units which were attached to antennas until now. The main
+challenge is to guarantee that the latency of the periodic messages sent
+from the antennas to their processing units and back, fulfills protocol
+time constraints. We show that traditional statistical multiplexing does
+not allow such a low latency, due to collisions and buffering at nodes.
+Hence, we propose in this article to use a deterministic scheme for sending
+periodic messages without collisions in the network thus saving the latency
+incurred by buffering.
+
+We give several algorithms to compute such schemes for a common topology
+where one link is shared by all antennas. We show that there is always a
+solution when the routes are short or the load is small. When the
+parameters are unconstrained, and some buffering is allowed in the
+processing units, we propose an algorithm (PMLS) adapted from a classical
+scheduling method. The experimental results show that even under full load,
+most of the time PMLS finds a deterministic sending scheme with no latency."
+    </div>
+    <div style="display: none;" id="S1806_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@INPROCEEDINGS{Guir1806:Deterministic,
+AUTHOR="Dominique Barth and Maël Guiraud and Brice Leclerc and Olivier Marce and
+Yann Strozecki",
+TITLE="Deterministic Scheduling of Periodic Messages for Cloud {RAN}",
+BOOKTITLE="2018 25th International Conference on Telecommunications (ICT) (ICT 2018)",
+ADDRESS="Saint Malo, France",
+DAYS=25,
+MONTH=jun,
+YEAR=2018}
+  </pre>
+
+      </div><br />
+      <br>
+
+
+
+<b>"Efficient enumeration of solutions produced by closure operations"</b>,<br/>
+Arnaud Mary, Yann Strozecki,  STACS 2016
+
+<br>[ <a  href="increm2.pdf"> Pdf</a> | 
+  <a href="http://arxiv.org/abs/1509.05623"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#S16_bibtex').slideUp('fast'); $('#S16_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#S16_abstract').slideUp('fast'); $('#S16_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="S16_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+    In this paper we address the problem of generating all elements obtained by the saturation of an initial set by some operations. More precisely, we prove that we can generate the closure by polymorphisms of a boolean relation with a polynomial delay. This implies for instance that we can compute with polynomial delay the closure of a family of sets by any set of set operations (e.g. by union, intersection, difference, symmetric difference ...). To do so, we prove that for any set of operations F, one can decide in polynomial time whether an elements belongs to the closure by F of a family of sets. When the relation is over a domain larger than two elements, our generic enumeration method fails for some cases, since the associated decision problem is NP-hard and we provide an alternative algorithm. 
+    </div>
+    <div style="display: none;" id="S16_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@inproceedings{mary2016efficient,
+title={Efficient Enumeration of Solutions Produced by Closure Operations},
+author={Mary, Arnaud and Strozecki, Yann},
+booktitle={33rd Symposium on Theoretical Aspects of Computer Science},
+year={2016}
+}
+	</pre>
+
+      </div><br />
+      <br>
+
+
+<b>"Efficient Generation of Stable Planar Cages for Chemistry"</b>,<br/>
+Dominique Barth, Olivier David, Franck Quessette, Vincent Reinhard, Yann Strozecki, Sandrine Vial, SEA 2015
+
+<br>[ <a  href="http://kekule.prism.uvsq.fr/"> Site web (code et benchmark)</a> | 
+  <a href="http://arxiv.org/abs/1503.06610"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#S15_bibtex').slideUp('fast'); $('#S15_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#S15_abstract').slideUp('fast'); $('#S15_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+ |<a href="source.tar.gz"> Source </a>  
+  </span> ]
+  
+  <div style="display: none;" id="S15_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+In this paper we describe an algorithm which generates all colored planar maps with a good minimum sparsity from simple motifs and rules to connect them. An implementation of this algorithm is available and is used by chemists who want to quickly generate all sound molecules they can obtain by mixing some basic components. 
+    </div>
+    <div style="display: none;" id="S15_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@inproceedings{barth2015efficient,
+title={Efficient Generation of Stable Planar Cages for Chemistry},
+author={Barth, Dominique and David, Olivier and Quessette, Franck and Reinhard, Vincent and Strozecki, Yann and Vial, Sandrine},
+booktitle={International Symposium on Experimental Algorithms},
+pages={235--246},
+year={2015},
+organization={Springer International Publishing}
+}
+	</pre>
+
+      </div><br />
+      <br>
+
+
+<b>"Finding Optimal Strategies of Almost Acyclic Simple Stochatic Games"</b>,<br/>
+David Auger, Pierre Coucheney, Yann Strozecki, TAMC 2014
+
+<br>[  <a href="acyclic_ssg.pdf"  target="_blank">Pdf</a> | <a href="http://arxiv.org/abs/1402.0471"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#S14_bibtex').slideUp('fast'); $('#S14_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#S14_abstract').slideUp('fast'); $('#S14_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+  </span> ]
+  
+  <div style="display: none;" id="S14_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>The optimal value computation for turned-based stochastic games with reachability objectives, also known as simple stochastic games, is one of the few problems in NP and coNP which are not known to be in P. However, there are some cases where these games can be easily solved, as for instance when the underlying graph is acyclic. In this work, we try to extend this tractability to several classes of games that can be thought as "almost" acyclic. We give some fixed-parameter tractable or polynomial algorithms in terms of different parameters such as the number of cycles or the size of the minimal feedback vertex set. 
+    </div>
+    <div style="display: none;" id="S14_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@inproceedings{DBLP:conf/tamc/AugerCS14,
+ author    = {David Auger and Pierre Coucheney and Yann Strozecki},
+ title     = {Finding Optimal Strategies of Almost Acyclic Simple Stochastic Games},
+ booktitle = {TAMC},
+ year      = {2014},
+ pages     = {67-85},
+}
+	</pre>
+
+      </div><br />
+      <br>
+<b>"Factoring bivariate lacunary polynomials without heights"</b>,<br/>
+Chattopadhyay, Arkadev and Grenet, Bruno and Koiran, Pascal and Portier, Natacha and Strozecki, Yann. ISSAC 2013.
+
+<br>[  <a href="130418bruno-val.pdf"  target="_blank">Pdf</a> | <a href="http://arxiv.org/abs/1206.4224"  target="_blank">ArXiv</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#S13_bibtex').slideUp('fast'); $('#S13_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#S13_abstract').slideUp('fast'); $('#S13_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+  </span> ]
+  
+  <div style="display: none;" id="S13_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>The lacunary, or superpsarse, representation of a multivariate polynomial P is a list of pairs (c,e) where c is a coefficient of P and e is a vector of exponent. Each pair defines a term of the polynomial, and P equals the sum of all these terms. The factorization of lacunary polynomial has been investigated in a series of papers by Cucker, Koiran and Smale (J. Symb. Comput., 1999), Lenstra (Number Theory in Progress, 1999), and Kaltofen and Koiran (ISSAC 2005 & 2006). In this paper, we are interested in more elementary proofs for some of these results. We focus on Kaltofen and Koiran's results dealing with linear factors of bivariate lacunary polynomials. In particular, we give a polynomial-time algorithm to find linear factors of bivariate polynomials that is not based on heights of algebraic numbers. This simplification allows us to give a similar result for some fields of positive characteristic. Our main technical result is an upper bound on the valuation of polynomials of the form P(X,1+X) where P is a bivariate lacunary polynomial, and can be viewed as a generalization of a result of Hajós. 
+    </div>
+    <div style="display: none;" id="S13_bibtex" class="bibtex">
+      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+      <pre>
+@inproceedings{chattopadhyay2013factoring,
+ title={Factoring bivariate lacunary polynomials without heights},
+ author={Chattopadhyay, Arkadev and Grenet, Bruno and Koiran, Pascal and Portier, Natacha and Strozecki, Yann},
+ booktitle={Proceedings of the 38th international symposium on International symposium on symbolic and algebraic computation},
+ pages={141--148},
+ year={2013},
+ organization={ACM}
+}
+	</pre>
+
+      </div><br />
+      <br>
+	
+<b>"On enumerating monomials and other combinatorial
+structures by polynomial interpolation"</b>,<br>
+ Yann Strozecki. Theory of Computing Systems, 2013. 
+  <br/>
+  An extended version of the MFCS paper on enumeration and interpolation. 
+  <br>[ <a href="poly_longue.pdf"  target="_blank">Pdf</a> |
+    <span style="display: inline;" class="script_show">
+
+      <a class="pub_link" href="#" onclick="$('#S12_bibtex').slideUp('fast'); $('#S12_abstract').slideToggle('fast'); return false;">Abstract</a> 
+      | <a class="pub_link" href="#" onclick="$('#S12_abstract').slideUp('fast'); $('#S12_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+    </span> ]
+    
+    <div style="display: none;" id="S12_abstract" class="abstract">
+
+      <h4 style="display: none;" class="script_hide">Abstract</h4>
+      <br>We study the problem of generating the monomials of a black box
+	polynomial in the context of enumeration complexity. We present three new
+	randomized algorithms for restricted classes of polynomials with a polyno-
+	mial or incremental delay, and the same global running time as the classical
+	ones. We introduce TotalBPP, IncBPP and DelayBPP, which are prob-
+	abilistic counterparts of the most common classes for enumeration problems.
+	Our interpolation algorithms are applied to algebraic representations of sev-
+	eral combinatorial enumeration problems, which are so proved to belong to
+	the introduced complexity classes. In particular, the spanning hypertrees of a
+	3-uniform hypergraph can be enumerated with a polynomial delay. Finally, we
+	study polynomials given by circuits and prove that we can derandomize the
+	interpolation algorithms on classes of bounded-depth circuits. We also prove
+	the hardness of some problems on polynomials of low degree and small circuit
+	complexity, which suggests that our good interpolation algorithm for multi-
+	linear polynomials cannot be generalized to degree 2 polynomials. 
+      </div>
+      <div style="display: none;" id="S12_bibtex" class="bibtex">
+	<h4 style="display: none;" class="script_hide">BibTeX</h4>
+	<pre>
+@article{strozecki2013,
+ author	   = {Yann Strozecki},
+ title     = {On Enumerating Monomials and Other Combinatorial Structures
+               by Polynomial Interpolation},
+ journal   = {Theory Comput. Syst.},
+ volume    = {53},
+ number    = {4},
+ year      = {2013},
+ pages     = {532-568},
+}
+ </pre>
+	</div><br />
+	<br>
+
+
+<b>"Approximate verification and enumeration problems"</b>,<br>
+  Sylvain Peyronnet, Michel de Rougemont and Yann Strozecki. ICTAC, 2012. 
+  <br/>
+  Some additions and corrections to mistakes in the article can be found in the <a href= "ictac_strozecki">presentation</a>. 
+  <br>[ <a href="verif.pdf"  target="_blank">Pdf</a> |
+    <span style="display: inline;" class="script_show">
+
+      <a class="pub_link" href="#" onclick="$('#SRS12_bibtex').slideUp('fast'); $('#SRS12_abstract').slideToggle('fast'); return false;">Abstract</a> 
+      | <a class="pub_link" href="#" onclick="$('#SRS12_abstract').slideUp('fast'); $('#SRS12_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+    </span> ]
+    
+    <div style="display: none;" id="SRS12_abstract" class="abstract">
+
+      <h4 style="display: none;" class="script_hide">Abstract</h4>
+      <br>
+	We study enumeration problems with probabilistic methods
+	and apply them to verification problems. We consider
+	the enumeration of monomials of a polynomial given as a
+	black box, and the enumeration of discrete points which
+	separate two polytopes in a space of dimension n, using
+	a random walk which provides witnesses if the volume of
+	the difference of the polytopes is large enough. We apply
+	the first method to enumerate words which distinguish two
+	probabilistic automata with n states and m transitions in
+	time O(n.m). We apply the second method to enumerate
+	words which epsilon-distinguish two nondeterministic finite au-
+	tomata using an embedding in a vector space of dimension
+	p, in time polynomial in p. We also enumerate strate-
+	gies which epsilon-distinguish two Markov Decision Processes
+	in time polynomial in the dimension of their statistical
+	representation.
+      </div>
+      <div style="display: none;" id="SRS12_bibtex" class="bibtex">
+	<h4 style="display: none;" class="script_hide">BibTeX</h4>
+	<pre>
+
+@article{peyronnet2012approximate,
+ title={Approximate verification and enumeration problems},
+ author={Peyronnet, S. and De Rougemont, M. and Strozecki, Y.},
+ journal={Theoretical Aspects of Computing--ICTAC 2012},
+ pages={228--242},
+ year={2012},
+ publisher={Springer}
+}
+	</pre>
+
+      </div><br />
+      <br>
+
+	<b>"Patch Reprojections for Non Local Methods"</b>,<br/>
+	Joseph Salmon and Yann Strozecki. Signal Processing, 2012.<br/>
+	An improved and extended version of the ICIP paper.
+
+	<br>[ <a href="http://josephsalmon.eu/papers/NLM_Reprojections_Salmon_Strozecki.pdf" target="_blank">Pdf</a> | 
+	  <span style="display: inline;" class="script_show">
+
+	    <a class="pub_link" href="#" onclick="$('#SP11_bibtex').slideUp('fast'); $('#SP11_abstract').slideToggle('fast'); return false;">Abstract</a> 
+	    | <a class="pub_link" href="#" onclick="$('#SP11_abstract').slideUp('fast'); $('#SP11_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+	  </span> 
+	  | <a href="http://josephsalmon.eu/code/index_codes.php?page=NLM_reprojection" >Demo Matlab </a>
+	  | <a href="http://josephsalmon.eu/code/demos/Reprojections_code.zip" >Code C</a> ]
+	  <div style="display: none;" id="SP11_abstract" class="abstract">
+
+	    <h4 style="display: none;" class="script_hide">Abstract</h4>
+	    <br>Since their introduction in denoising, the family of non-local methods, whose Non-Local Means (NL-Means)
+	      is the most famous member, has proved its ability to challenge other powerful methods such as wavelet based
+	      approaches, or variational techniques. Though simple to implement and efficient in practice, the classical NL-Means
+	      algorithm suffers from several limitations: ringing artifacts are created around edges and regions with few repetitions
+	      in the image are not treated at all. In this paper, we present an easy to implement and time efficient modification of
+	      the NL-means based on a better reprojection from the patches space to the original pixel space, specially designed
+	      to reduce those artifacts. We illustrate the performance of our new method on a toy example and on some classical
+	      natural images.
+	    </div>
+	    <div style="display: none;" id="SP11_bibtex" class="bibtex">
+	      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+
+	      @article{salmon2012patch,<br />
+	      title={Patch reprojections for Non-Local methods},<br />
+	      author={Salmon, J. and Strozecki, Y.},<br />
+	      journal={Signal Processing},<br />
+	      volume={92},<br />
+	      number={2},<br />
+	      pages={477--489},<br />
+	      year={2012},<br />
+	      publisher={Elsevier}<br />
+	      }<br />
+	    </div><br />
+	    <br />
+
+	    <b>"The Limited Power of Powering: Polynomial Identity Testing and a Depth-four Lower Bound for the Permanent"</b>,<br>
+	      Bruno Grenet, Pascal Koiran, Natacha Portier and Yann Strozecki. FSTTCS, 2011. 
+	    </br> 
+	    See the arXiv version for some additional proofs.
+
+	    <br>[ <a href="fsttcsGKPS.pdf"  target="_blank">Pdf</a> |
+	      <a href="http://arxiv.org/abs/1107.1434" target="_blank">ArXiv</a> | 
+	      <span style="display: inline;" class="script_show">
+
+		<a class="pub_link" href="#" onclick="$('#AOS11_bibtex').slideUp('fast'); $('#AOS11_abstract').slideToggle('fast'); return false;">Abstract</a> 
+		| <a class="pub_link" href="#" onclick="$('#AOS11_abstract').slideUp('fast'); $('#AOS11_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+	      </span> ]
+	      
+	      <div style="display: none;" id="AOS11_abstract" class="abstract">
+
+		<h4 style="display: none;" class="script_hide">Abstract</h4>
+		<br>Polynomial identity testing and arithmetic circuit lower bounds are two central questions in algebraic complexity theory. It is an intriguing fact that these questions are actually related. One of the authors of the present paper has recently proposed a "real {\tau}-conjecture" which is inspired by this connection. The real {\tau}-conjecture states that the number of real roots of a sum of products of sparse univariate polynomials should be polynomially bounded. It implies a superpolynomial lower bound on the size of arithmetic circuits computing the permanent polynomial. In this paper we show that the real {\tau}-conjecture holds true for a restricted class of sums of products of sparse polynomials. This result yields lower bounds for a restricted class of depth-4 circuits: we show that polynomial size circuits from this class cannot compute the permanent, and we also give a deterministic polynomial identity testing algorithm for the same class of circuits. 
+		</div>
+		<div style="display: none;" id="AOS11_bibtex" class="bibtex">
+		  <h4 style="display: none;" class="script_hide">BibTeX</h4>
+		  <pre>
+@inproceedings{GKPS11,
+  author    = {Bruno Grenet and
+               Pascal Koiran and
+               Natacha Portier and
+               Yann Strozecki},
+  title     = {The Limited Power of Powering: Polynomial Identity Testing
+               and a Depth-four Lower Bound for the Permanent},
+  booktitle = {FSTTCS},
+  year      = {2011},
+  pages     = {127-139},
+ }
+		  </pre>
+
+		</div><br />
+		<br>
+
+
+		  <b>"Enumeration Complexity of logical query problems with second order variables"</b>,<br/>
+		  Arnaud Durand and Yann Strozecki. CSL, 2011.
+
+		  <br>[ <a href="enumeration_query.pdf" target="_blank">Pdf</a> | 
+		    <span style="display: inline;" class="script_show">
+
+		      <a class="pub_link" href="#" onclick="$('#DS11_bibtex').slideUp('fast'); $('#DS11_abstract').slideToggle('fast'); return false;">Abstract</a> 
+		      | <a class="pub_link" href="#" onclick="$('#DS11_abstract').slideUp('fast'); $('#DS11_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+		    </span> ]
+		    <div style="display: none;" id="DS11_abstract" class="abstract">
+
+		      <h4 style="display: none;" class="script_hide">Abstract</h4>
+		      <br>We consider query problems defined by first order formulas of the form $\Phi(\tu x,\tu T)$ with free first order and second order variables
+			and study the data complexity of enumerating results of such queries. By considering the number of alternations in the quantifier prefixes of formulas,
+			we show that such query problems either admit a constant delay or a polynomial delay enumeration algorithm or are hard to enumerate.
+			We also exhibit syntactically defined fragments inside the hard cases that still admit good enumeration algorithms and discuss the case of some restricted classes
+			of database structures as inputs.
+		      </div>
+		      <div style="display: none;" id="DS11_bibtex" class="bibtex">
+			<h4 style="display: none;" class="script_hide">BibTeX</h4>
+			<pre>
+@inproceedings{durand2011,
+  author    = {Arnaud Durand and
+               Yann Strozecki},
+  title     = {Enumeration Complexity of Logical Query Problems with Second-order
+               Variables},
+  booktitle = {CSL},
+  year      = {2011},
+  pages     = {189-202},
+  }
+			</pre>
+
+		      </div><br />
+		      <br />
+
+		      <b>"Monadic second-order model-checking on decomposable matroids"</b>,<br/>
+		      Yann Strozecki. Discrete Applied Mathematics, 2011.
+
+		      <br>[ <a href="http://arxiv.org/abs/0908.4499" target="_blank">Pdf</a> | 
+			<span style="display: inline;" class="script_show">
+
+			  <a class="pub_link" href="#" onclick="$('#S11_bibtex').slideUp('fast'); $('#S11_abstract').slideToggle('fast'); return false;">Abstract</a> 
+			  | <a class="pub_link" href="#" onclick="$('#S11_abstract').slideUp('fast'); $('#S11_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+			</span> ]
+			<div style="display: none;" id="S11_abstract" class="abstract">
+
+			  <h4 style="display: none;" class="script_hide">Abstract</h4>
+			  <br>
+			    A notion of branch-width, which generalizes the one known for graphs, can be defined for matroids.
+			    We first give a proof of the polynomial time model-checking of monadic second-order formulas on representable matroids of bounded branch-width, 
+			    by reduction to monadic second-order formulas on trees. This proof is much simpler than the one previously known.
+			    We also provide a link between our logical approach and a grammar that allows to build matroids of bounded branch-width.
+			    Finally, we introduce a new class of non-necessarily representable matroids, described by a grammar and
+			    on which monadic second-order formulas can be checked in linear time.
+			  </div>
+			  <div style="display: none;" id="S11_bibtex" class="bibtex">
+			    <h4 style="display: none;" class="script_hide">BibTeX</h4>
+			    <pre>
+@article{strozecki2011monadic,
+  author    = {Yann Strozecki},
+  title     = {Monadic second-order model-checking on decomposable matroids},
+  journal   = {Discrete Applied Mathematics},
+  volume    = {159},
+  number    = {10},
+  year      = {2011},
+  pages     = {1022-1039},
+  }
+			    </pre>
+
+			  </div><br />
+			  <br />
+
+			  <b>"On the complexity of two acyclic subhypergraphs problems"</b>,<br/>
+			  David Duris and Yann Strozecki. WALCOM, 2011.
+
+			  <br>[ <a href="walcom_duris-strozecki.pdf" target="_blank">Pdf</a> | 
+			    <span style="display: inline;" class="script_show">
+
+			      <a class="pub_link" href="#" onclick="$('#DurisS11_bibtex').slideUp('fast'); $('#DurisS11_abstract').slideToggle('fast'); return false;">Abstract</a> 
+			      | <a class="pub_link" href="#" onclick="$('#DurisS11_abstract').slideUp('fast'); $('#DurisS11_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+			    </span> ]
+			    <div style="display: none;" id="DurisS11_abstract" class="abstract">
+
+			      <h4 style="display: none;" class="script_hide">Abstract</h4>
+			      <br>We investigate the computational complexity of two decision problems
+				concerning the existence of certain acyclic subhypergraphs of a given 
+				hypergraph, namely the \textsc{Spanning Acyclic Subhypergraph} problem
+				and the \textsc{Maximal Acyclic Subhypergraph} problem. The former
+				is about the existence of an acyclic subhypergraph such that each
+				vertex of the input hypergraph is contained in at least one 
+				hyperedge of the subhypergraph. The latter is about the existence
+				of an acyclic subhypergraph with $k$ hyperedges where $k$ is
+				part of the input. For each of these problems, we consider different
+				notions of acyclicity of hypergraphs: Berge-acyclicity, $\gamma$-acyclicity,
+				$\beta$-acyclicity and $\alpha$-acyclicity. We are also concerned
+				with the size of the hyperedges of the input hypergraph. Depending
+				on these two parameters (notion of acyclicity and size of the hyperedges),
+				we try to determine which instances of the two problems are
+				in \textsf{P} $\cap$ \textsf{RNC} and which are \textsf{NP}-complete.
+			      </div>
+			      <div style="display: none;" id="DurisS11_bibtex" class="bibtex">
+				<h4 style="display: none;" class="script_hide">BibTeX</h4>
+				<pre>
+@article{duris2011complexity,
+ title={The complexity of acyclic subhypergraph problems},
+ author={Duris, D. and Strozecki, Y.},
+ journal={WALCOM: Algorithms and Computation},
+ pages={45--56},
+ year={2011},
+ publisher={Springer}
+}
+
+				</pre>
+
+			      </div><br />
+
+
+			      <b><br /> "From Patches to Pixels in Non-Local methods: Weighted-Average Reprojection"</b><br />
+			      Joseph Salmon and Yann Strozecki. ICIP, 2010.
+			      
+
+			      <br>[ <a href="http://josephsalmon.eu/papers/ICIP10.pdf" target="_blank">Pdf</a> | 
+				<span style="display: inline;" class="script_show">
+
+				  <a class="pub_link" href="#" onclick="$('#ICIP10_bibtex').slideUp('fast'); $('#ICIP10_abstract').slideToggle('fast'); return false;">Abstract</a> 
+				  | <a class="pub_link" href="#" onclick="$('#ICIP10_abstract').slideUp('fast'); $('#ICIP10_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+				</span> 
+				| <a href="http://josephsalmon.eu/code/index_codes.php?page=NLM_reprojection" >Demo Matlab </a>
+				| <a href="http://josephsalmon.eu/code/demos/Reprojections_code.zip" >Code C</a> ]
+				<div style="display: none;" id="ICIP10_abstract" class="abstract"> 
+
+				  <h4 style="display: none;" class="script_hide">Abstract</h4>
+
+				  <br>Since their introduction in denoising, the family of non local
+				    methods, whose Non-Local Means (NL-Means) is the most
+				    famous member, has proved its ability to challenge other
+				    powerful methods such as wavelet based approaches or variational
+				    techniques. Though simple to implement and efficient
+				    in practice, the classical NL-Means suffers from ringing artifacts
+				    around edges. In this paper, we present an easy to
+				    implement and time efficient modification of the NL-means
+				    based on a better reprojection from the patches space to the
+				    original (image) pixel space. We illustrate the performance of
+				    our method on a toy example and on some classical images.
+				  </div>
+				  <div style="display: none;" id="ICIP10_bibtex" class="bibtex">
+				    <h4 style="display: none;" class="script_hide">BibTeX</h4>
+				    <pre>
+@InProceedings{ Salmon_Strozecki10,
+ AUTHOR = "J. Salmon and Y. Strozecki",
+ TITLE = "From Patches to Pixels in Non-Local methods: {Weighted-Average} Reprojection",
+ BOOKTITLE = "ICIP",
+ pages     = {1929-1932},
+ YEAR = "2010"
+}
+				    </pre>
+
+				  </div><br />
+				  <br />
+
+				  <b>"Enumeration of the monomials of a polynomial and related complexity classes"</b>,<br/>
+				  Yann Strozecki. MFCS, 2010.
+
+				  <br>[ <a href="http://arxiv.org/abs/1004.3020" target="_blank">Pdf</a> | 
+				    <span style="display: inline;" class="script_show">
+
+				      <a class="pub_link" href="#" onclick="$('#S10_bibtex').slideUp('fast'); $('#S10_abstract').slideToggle('fast'); return false;">Abstract</a> 
+				      | <a class="pub_link" href="#" onclick="$('#S10_abstract').slideUp('fast'); $('#S10_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+				    </span> ]
+				    <div style="display: none;" id="S10_abstract" class="abstract">
+
+				      <h4 style="display: none;" class="script_hide">Abstract</h4>
+				      <br>We study the problem of generating monomials of a polynomial in the context
+					of enumeration complexity. 
+					We present two new algorithms for restricted classes of polynomials, which have a good delay between two generated monomials
+					and the same global running time as the classical ones. Moreover they are simple to describe,
+					use small evaluation points and one of them is parallelizable. We introduce $\TotalPP$, $\incremPP$ and $\DelayPP$,
+					which are probabilistic counterparts of the most common classes for enumeration problems,
+					hoping that randomization will be a tool as strong for enumeration as it is for decision.
+					Our interpolation algorithms prove that a few interesting problems are in these classes like
+					the enumeration of the spanning hypertrees of a $3$-uniform hypergraph.  
+					Finally we give a method to interpolate degree $2$ polynomials with an acceptable (incremental) delay. We also prove
+					that finding a specified monomial in a degree $2$ polynomial is hard unless $\mathrm{RP} = \NP$.
+					It suggests that there is no algorithm with a delay as good (polynomial) as the one we achieve for multilinear polynomials.
+				      </div>
+				      <div style="display: none;" id="S10_bibtex" class="bibtex">
+					<h4 style="display: none;" class="script_hide">BibTeX</h4>
+					<pre>
+
+@article{strozecki2010,
+ title={{Enumeration of the monomials of a polynomial and related complexity classes}},
+ author={Strozecki, Y.},
+ journal={Mathematical Foundations of Computer Science},
+ pages={629--640},
+ year={2010},
+ publisher={Springer}
+}
+</pre>
+
+</div><br />
+<br />
+
+				      
+ <h2> <a name="Manuscripts"> Manuscripts </a> </h2>
+
+              <b>"Enumeration Complexity: Incremental Time, Delay and
+Space"</b>,<br/>
+              Yann Strozecki. Habilitation Thesis, 2021.
+
+              <br>[ <a href="Manuscript.pdf" target="_blank">Pdf</a> | 
+          <span style="display: inline;" class="script_show">
+           <a class="pub_link" href="#" onclick="$('#PhdS21_abstract').slideUp('fast'); $('#PhdS21_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+          </span> ]
+          
+            <div style="display: none;" id="PhdS21_bibtex" class="bibtex">
+              <h4 style="display: none;" class="script_hide">BibTeX</h4>
+              <pre>
+
+@PHDTHESIS{phd,
+ author = {Strozecki, Yann},
+ title = {Enumeration Complexity: Incremental Time, Delay and
+Space},
+ school = {Universit\'e de Versailles Saint-Quentin-en-Yvelines},
+ year = {2021}
+}
+ </pre>
+
+            </div><br />
+            <br />
+              
+
+				      <b>"Enumeration complexity and matroid decomposition"</b>,<br/>
+				      Yann Strozecki. Phd Thesis, 2010.
+
+				      <br>[ <a href="these_strozecki.pdf" target="_blank">Pdf</a> | 
+					<span style="display: inline;" class="script_show">
+
+					  <a class="pub_link" href="#" onclick="$('#PhdS10_bibtex').slideUp('fast'); $('#PhdS10_abstract').slideToggle('fast'); return false;">Abstract</a> 
+					  | <a class="pub_link" href="#" onclick="$('#PhdS10_abstract').slideUp('fast'); $('#PhdS10_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+					</span> ]
+					<div style="display: none;" id="PhdS10_abstract" class="abstract">
+
+					  <h4 style="display: none;" class="script_hide">Abstract</h4>
+					  <br>This thesis is made of two parts, on the one hand
+					    the study of enumeration algorithms and their complexity
+					    and in the other hand the model checking of Monadic second 
+					    order properties over decomposable matroids.
+
+					    The enumeration is studied first from a structural point of view:
+					    natural complexity classes are defined and their relation studied.
+					    We also try to explain the effect of ordering in enumeration 
+					    and of some set operations over the solutions.
+
+					    Then, we present several algorithms to enumerate the 
+					    monomials of polynomials given either as black boxes or circuits.
+					    They can be used to solve more classical combinatoric problems
+					    such as the enumeration of spanning hypertrees of a 3-uniform
+					    hypergraph.
+
+					    In the second part, we present an alternative tree decomposition 
+					    of representable matroids of bounded branch-width. It enables to
+					    locally express the dependency property and thus to give a linear time
+					    algorithm to check MSO properties over these structures.
+					    We also obtain a linear delay enumeration algorithm of the objects
+					    definable in MSO, such as the circuits of a matroid.
+					    This decomposition can easily extended to other classes
+					    and even by further abstraction to hypergaphs.
+					  </div>
+					  <div style="display: none;" id="PhdS10_bibtex" class="bibtex">
+					    <h4 style="display: none;" class="script_hide">BibTeX</h4>
+					    <pre>
+
+@PHDTHESIS{phd,
+ author = {Strozecki, Yann},
+ title = {Enumeration complexity and matroid decomposition},
+ school = {Universit\'e Paris Diderot - Paris 7},
+ year = {2010}
+}
+					    </pre>
+
+					  </div><br />
+					  <br />
+
+					  <b>"Algorithmes holographiques"</b>,<br/>
+					  Yann Strozecki. Master Thesis, 2007.
+
+					  <br>[ <a href="RapportM2.pdf" target="_blank">Pdf</a> | 
+					    <span style="display: inline;" class="script_show"> 
+					      <a class="pub_link" href="#" onclick="$('#S7_abstract').slideUp('fast'); $('#S7_bibtex').slideToggle('fast'); return false;">BibTeX</a>  
+					    </span> ]
+					    
+					    <div style="display: none;" id="S7_bibtex" class="bibtex">
+					      <h4 style="display: none;" class="script_hide">BibTeX</h4>
+					      <pre>
+
+@mastersthesis{holographic,
+ Author = {Strozecki, Y.},
+ School = {Universit\'e Paris-Diderot},
+ Title = {Algorithmes holographiques},
+ Year = {2007},
+}
+					      </pre>
+
+					    </div><br />
+					    <br />
+
+
+
+					    
+					    <h2> <a name="Presentations">Some presentations (most in english) </a></h2>
+					    <ul>
+
+
+                <li><a href="wepa2022.pdf"> A presentation </a> at WEPA on the power of polynomial space in enumeration, in particular when eliminating duplicates.</a></li><br/>
+                <li><a href="ssg_xavier.pdf"> A presentation </a> on a generic strategy improvement to solve SSG's.</a></li><br/>
+                <li><a href="dagsthul1.pdf"> Several</a> <a href="dagsthul2.pdf">versions</a> <a href="presentationwepa.pdf">of a general </a><a href="simons.pdf">presentation</a> on enumeration complexity given at Dagsthul, WEPA and the Simons institute.</a></li><br/>
+                
+                <li><a href="DNF.pdf"> Presentation</a> on enumeration of the model of a DNF formula and strong polynomial delay.</li><br/>
+                <li><a href="maximalsaturation.pdf"> A presentation <a/> at WEPA (Clemont-Ferrand) about mixing saturation and maximal solutions.</li><br/>
+					      <li> <a href="saturation.pdf"> A presentation <a/> on enumeration and saturation problems solved faster given at Versailles and Marne la Vallée.<br/>
+						<a href="stacs2016">The short version <a/> given at STACS 2016. </li><br/>
+					    <li> <a href="bamboopres.pdf"> A presentation <a/> on enumeration of molecular graphs given in Lyon to the Bamboo team.</li><br/>
+					    <li> <a href="enumchimie.pdf"> A presentation <a/> on enumeration and an application to cheminformatic presented at the seminar of the LIMOS. <a href="chimie.pdf">Another presentation <a/> on the cheminformatic part only : an enumeration algorithm which generates planar maps. </li><br/>
+
+					    <li> <a href="cmf.pdf"> A short presentation <a/> about simple stochastic games and how to solve them when they are almost acyclic. Presentation made for the CMF days in Caen.</li><br/>				    
+					    <li> <a href="presentation_vienna.pdf">Basics </a> about simple stochastic games, given at the seminar of the Kurt Gödel Institute in Vienna.</li><br/> 
+					      <Li> <a href="ictac_strozecki.pdf">Presentation</a> given at ICTAC 2012, on representing automata by statistical polytopes to separate them.</li><br/>
+					      <li> <a href="slides-cli.pdf">Presentation</a> about lower bounds for arithmetic circuits using an improved Descarte's rule, given at the CLI (Paris 7) seminar.</li><br/>
+					      <li> <a href="presentation_bdx.pdf">Presentation</a> about a hypergraph decomposition and its associated parameter, the decomposition-width, given at the seminar of the Graphes et logique team, LABRI (Bordeaux).</li><br/>
+					      <li> <a href="presentation3enum.pdf">Presentation</a> about three methods (algebraic, logic and geometric) to solve enumeration problems, given in several
+						seminars.</li><br/>
+					      <li> <a href="presentation_bergen.pdf">Presentation</a> done at CSL 2011, on the complexity of enumeration problems defined by first order formulas.</li><br />
+					      <li> <a href="presentation_enumeration.pdf">Presentation</a> on two different approaches to understand enumeration complexity,
+						given at the seminar of the Graphes et logique team, LABRI (Bordeaux).</li><br />
+
+					      <li> <a href="presentation_toronto.pdf">Presentation</a> on monomial enumeration given at the seminar of the Theory Team (University of Toronto).
+					      </li><br />
+					      
+					      <li> A more understandable <a href="presentation_seminaire_logique.pdf">presentation</a> on matroid decomposition for the Paris 7 logic seminar.
+					      </li><br />
+					      <li> <a href="presentation_workshop_matroid.pdf">Presentation</a> on matroid decomposition given at the Workshop in Logic, Combinatorics and Computation,
+						Brno 2010.
+					      </li><br />
+					      <li> <a href="seminaire_etudiant.pdf">Exposé</a> général sur la complexité fait pour le  séminaire des thésards de logique.</li><br />
+ 					      <li> <a href="exposé_matroide.pdf">Présentation</a> de mon travail sur les matroïdes décomposables faite au séminaire "Complexité, Logique et Informatique" à Paris 7, au séminaire du groupe Graphes et logique du LABRI (Bordeaux) et au séminaire de l'équipe AlGco du LIRMM (Montpellier) </li><br />
+					      <li> <a href="expose_polynome.pdf">Présentation</a> de mon travail sur l'énumération des monômes d'un polynôme au séminaire du LAIC (Clermont-Ferrand). </li><br />
+
+					      <li> <a href="soutenance_lyon.pdf">Présentation</a> faite pour ma soutenance de M2, améliorée pour la présenter au groupe de travail MC2 à l'ENS Lyon.</li><br />
+					      <li> <a href="expose_clermont.pdf">Présentation</a> faite sur les algorithmes holographiques au séminaire du LAIC (Clermont-Ferrand). Elle est un peu plus simple et générale que la précédente.</li><br />
+					    </ul>
+
+
+					    <h2><a name="Miscellaneous">Miscellaneous</a> </h2>
+					    <ul>
+					      <li> Sur la demande insistante du <a href= "http://www.logique.jussieu.fr/~duris/">prix Kleene de l'année 2008</a>, un petit <a href ="Libenum.ml"> programme </a> en CAML d'énumération des
+						circuits d'un matroïde binaire.</li><br />
+
+					      <li> Une <a href="planaire.pdf">présentation</a> sur le comptage des couplages dans un graphe planaire pour le cours de théorie de la complexité et applications du LMFI.</li><br />
+					      <li> Une <a href="toda.pdf">présentation</a> sur le théorème de Toda pour le cours de Vérification probabiliste et approximation du LMFI.</li><br />
+
+					      <li> <a href="rapport2A.ps">Mémoire </a> de M1 sous la direction de Peter Bürgisser sur la complexité algébrique.<br />
+						Fait en 2005 au le laboratoire d'Algebraic Complexity de l'université de Paderborn. <br />
+						<a href="soutenance2A.pdf">Soutenance</a> du stage.<br />
+					      </li><br />
+					      <li> Quelques <a href="produit_matriciel.pdf"> notes </a> prises sur le produit matriciel rapide par des méthodes algébriques (groupes finis et représentation) au cours du stage à Paderborn.</li><br />
+					      <br />
+					    </ul>
+
+
+
+
+
+
+					  </body>
+					</html>

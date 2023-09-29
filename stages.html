@@ -25,24 +25,28 @@
 
     <h2>Sujets de stage de Master</h2>
    
+    Voici deux sujets de stage que je propose en 2024. Me contacter par mail pour avoir plus de détails.
+
+
+
     <h3>Décomposition de graphe pour les jeux stochastiques</h3>
     
    
 Nous travaillons dans l'équipe ALMOST sur la théorie algorithmique des jeux. Plus particulièrement nous nous intéressons à des jeux à deux joueurs avec du hasard.
 Le modèle le plus simple de ces jeux est appelé jeu stochastique simple (SSG) (introduit dans [1], présentation accessible et algorithmes dans [2,3]). Il s'agit de déplacer à tour de rôle un pion sur un graphe orienté sachant que le hasard intervient dans le déplacement du pion. Chaque joueur essaye d'amener le pion sur un sommet différent du graphe. L'objectif est de calculer efficacement les stratégies optimales des joueurs dans un SSG. Ces stratégies maximisent la probabilité d'arriver dans l'état profitable pour chaque joueur. C'est un problème qui est dans NP inter CoNP mais qu'on ne sait pas décider en temps polynomial, ce qui en fait un problème théorique très important. Par ailleurs, il a de nombreuses applications, notamment à la vérification de programmes et à l'optimisation.<p>
 
-Nous étudierons une méthode de résolution d'un SSG par dichotomie sur les valeurs de certains de ses sommets [3] qui a récemment été redécouverte[4]. 
+Nous étudierons une méthode de résolution d'un SSG par dichotomie sur les valeurs de certains de ses sommets [3] qui a récemment été redécouverte [4]. 
 On pourra d'abord la simplifier (dans sa preuve et son design) et l'accélérer, notamment en prenant mieux en compte le type de valeurs que peuvent prendre des SSGs.
-Ensuite, l'objectif du stage sera d'utiliser cette méthode pour résoudre des SSGs sur des graphes décomposables. Il a été montré en utilisant l'algorithme de dichotomie que de meilleurs algorithmes existent pour les SSGs avec un feedback vertex set borné et pour les graphes de largeur arborescente bornée. Nous pourrons adapter ce résultat aux graphes avec des petits cycle rank, et essayer de trouver la notion de décomposition de graphe orientée la plus pertinente pour ce problème. 
+Ensuite, l'objectif du stage sera d'utiliser cette méthode pour résoudre des SSGs sur des graphes décomposables. Il a été montré en utilisant l'algorithme de dichotomie que des algorithmes rapides existent pour les SSGs avec un feedback vertex set borné et pour les graphes de largeur arborescente bornée. Nous pourrons adapter ce résultat aux graphes avec une cycle rank bornée, et essayer de trouver la notion de décomposition de graphe orientée la plus pertinente pour ce problème. 
 
-On pourra également essayer d'utiliser et adapter au cas des SSGs les nouvelles méthodes de dichotomie en grande dimension [5].
+On pourra également essayer d'utiliser et adapter au cas des SSGs les nouvelles méthodes de dichotomie en grande dimension [5] afin d'accélérer encore ces méthodes.<p>
 
 
 [1]: The complexity of stochastic games, Anne Condon.<br>
 [2]: On strategy improvement algorithms for simple stochastic games, Tripathi, Rahul and Valkanova, Elena and Anil Kumar, VS.<br>
 [3]: A Generic Strategy Iteration Method for Simple Stochastic Games, David Auger, Xavier Badin de Montjoye, Yann Strozecki<br>
 [4]: Faster algorithm for turn-based stochastic games with bounded treewidth, Chatterjee, Krishnendu and Meggendorfer, Tobias and Saona, Raimundo and Svoboda, Jakub.<br>
-[5]: A faster algorithm for finding Tarski fixed points, Fearnley, John and P{\'a}lv{\"o}lgyi, D{\"o}m{\"o}t{\"o}r and Savani, Rahul.<br>
+[5]: A faster algorithm for finding Tarski fixed points, Fearnley, John and Palvolgyi, Domotor and Savani, Rahul.<br>
     
     <h3>Complexité d'espace en énumération</h3>
     
@@ -54,12 +58,10 @@ Les problèmes d'énumération apparaissent naturellement quand on s'intéresse 
 
 De nombreux chercheurs développent des méthodes algorithmiques qui nécessitent un espace polynomial pour résoudre des problèmes (par exemple [4]).
  C'est une enjeu important, car de nombreux algorithmes stockent toutes les solutions produites, souvent pour éliminer des doublons, ce qui les rend peu utilisable en pratique. Dans ce stage, l'objectif est d'explorer le rôle de l'espace du point de vue de la théorie de la complexité. 
-Dans une première étude du problème [5], je me suis attaché à comprendre comment éliminer des doublons en énumération en utilisant un espace polynomial et en respectant certaines contraintes de complexité temporelle. Il reste à montrer qu'on ne peut pas, en général, supprimer efficacement des doublons dans l'énumération sans utiliser soit beaucoup de temps, soit beaucoup d'espace. On peut également explorer l'élimination des doublons venant de d'union d'ensemble de solutions non disjoints, un cadre plus restrictif dans lequel l'élimination des doublons paraît plus simple.
+Dans une première étude du problème [5], je me suis attaché à comprendre comment éliminer des doublons en énumération en utilisant un espace polynomial et en respectant certaines contraintes de complexité temporelle. Il reste à montrer qu'on ne peut pas, en général, supprimer efficacement des doublons dans l'énumération sans utiliser soit beaucoup de temps, soit beaucoup d'espace. On peut également explorer l'élimination des doublons venant de d'union d'ensemble de solutions non disjoints, un cadre plus restrictif dans lequel l'élimination des doublons paraît plus simple.<p>
 
-A priori, utiliser de l'espace permet aux algorithme d'énumération de résoudre plus de problèmes. Il s'agirait de justifier cette impression en montrant des séparations de classes de complexité. Par exemple, on veut montrer que le délai polynomial sans mémoire auxiliaire est différent du délai polynomial avec une mémoire polynomiale.
-On veut également montrer que le délai incrémental polynomial est différent du délai incrémental polynomial avec un espace polynomial.
-
-Enfin, il serait intéressant de montrer ce genre de résultat pour un problème précis. Par exemple, on peut énumérer les circuits d'un matroïde binaire avec un délai incrémental polynomial et un espace exponentiel. Peut-on prouver qu'il n'est pas possible de le faire avec un espace polynomial (ou même moins) ?
+A priori, utiliser de l'espace permet aux algorithme d'énumération de résoudre plus de problèmes. Il s'agirait de justifier cette impression en montrant des séparations de classes de complexité. Par exemple, on veut montrer que le délai polynomial sans mémoire auxiliaire est différent du délai polynomial avec une mémoire polynomiale. On veut également montrer que le délai incrémental polynomial est différent du délai incrémental polynomial avec un espace polynomial.
+Enfin, il serait intéressant de montrer ce genre de résultat pour un problème précis. Par exemple, on peut énumérer les circuits d'un matroïde binaire avec un délai incrémental polynomial et un espace exponentiel. Peut-on prouver qu'il n'est pas possible de le faire avec un espace polynomial (ou même moins) ?<p>
 
 
 [1]: Yann Strozecki. Enumeration complexity and matroid decomposition. PhD thesis.<br>

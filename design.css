@@ -1,0 +1,208 @@
+h1.title {
+    font-size: 2em;
+    color: gold;
+}
+
+.reveal p {
+    margin: 2px 0;
+}
+
+p.subtitle {
+    font-size: 1em;
+    color: orange;
+    font-style: italic;
+}
+
+p.date {
+    font-style: italic;
+}
+
+.math {
+    color: orange;
+    text-transform: none;
+}
+
+.slide p {
+    text-align: left;
+}
+
+.slide h2 {
+    color: gold;
+}
+
+
+#title-slide * {
+    text-align: center;
+}
+
+em:not(span.math em)  {
+    color: hotpink;
+}
+
+.citation {
+    color: grey;
+}
+
+h2 .math {
+    color: gold;
+}
+
+iframe {
+    width: 100%;
+    height: 200px;
+}
+
+.right p {
+    text-align: right;
+    font-size: 0.5em;
+}
+
+.centered p {
+    text-align: center;
+}
+
+.big p {
+        text-align: center;
+        font-size: larger;
+}
+
+.gold  {
+    color: gold;
+}
+.cyan  {
+    color: cyan;
+}
+.magenta {
+    color: magenta;
+}
+
+strong {
+    color: rgb(255,0,100);
+}
+
+.rectangle {
+    height: 100px;
+    width: 10px;
+    margin: 10px;
+    background: grey;
+}
+
+
+.rectangle.sol {
+    background: orange;
+}
+
+.diagram {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 3px solid white;
+}
+
+.horizontal {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 60% auto;
+}
+
+.horizontal ul {
+    margin: 0;
+}
+
+.reveal pre code {
+    font-size: 0.8em;
+}
+
+div.sourceCode {
+    margin: auto;
+    width: 50%;
+}
+
+.reveal pre {
+    margin: 0;
+}
+
+.ontop {
+    display: grid;
+    align-items: center;
+}
+
+.ontop > * {
+    grid-column:1;
+    grid-row:1;
+}
+
+.darkbackground {
+    background: rgba(10,10,100,0.7);
+    text-shadow: hotpink 1px 1px, hotpink -1px -1px;
+}
+
+.flex{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.author {
+    display: grid;
+}
+
+#authors {
+    display: flex;
+    justify-content: space-between;
+}
+
+.explain {
+    background: rgba(0,255,0,0.2);
+    color: white;
+    /* border: solid 3px; */
+}
+
+.reveal .slides section .fragment.highlight-current-green.current-fragment {
+    background: rgba(0,255,0,0.2);
+    color: white;
+
+}
+
+.reveal .slides section .fragment.highlight-current-red.current-fragment {
+    background: rgba(255,255,0,0.1);
+    color: white;
+}
+
+.mathred .math {
+    color: red;
+}
+
+.reveal .slides .fragment.really-fade-out {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.reveal .slides .fragment.visible .really-fade-out {
+    display: none;
+}
+.reveal .slides .fragment.show {
+    display: inline;
+    visibility: visible;
+    opacity: 1;
+}
+
+.reveal .slides .fragment:not(.visible) .really-fade-in {
+    display: none;
+}
+.reveal .slides .fragment.visible .really-fade-in {
+    display: inline;
+}
+
+
+.openprob {
+    background: #030;
+    padding: 0.4rem 1ch;
+    margin: 1ch;
+    border: 0.4rem white solid;
+}
+
+.openprob h3 {
+    font-size: 1em;
+    margin: 0.2em;
+    color: gold;
+}

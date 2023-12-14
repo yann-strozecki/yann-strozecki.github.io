@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Geometric Amortization of Enumeration Algorithms</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//css/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="design.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://unpkg.com/reveal.js@^4//css/print/pdf.css' : 'https://unpkg.com/reveal.js@^4//css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://unpkg.com/reveal.js@^4//lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Geometric Amortization of Enumeration
+Algorithms</h1>
+  <p class="author">true</p>
+  <p class="author">true</p>
+  <p class="date">14 février, 2023</p>
+</section>
+
+<section>
+<section id="enumeration-and-complexity"
+class="title-slide slide level1">
+<h1>Enumeration and Complexity</h1>
+
+</section>
+<section id="enumeration-problem" class="slide level2">
+<h2>Enumeration Problem</h2>
+<p>Let <span class="math inline"><em>A</em>(<em>x</em>)</span> be a
+set.</p>
+<p><span
+class="math inline"><em>E</em><em>n</em><em>u</em><em>m</em><em>A</em></span>
+is the problem of outputting <span
+class="math inline"><em>A</em>(<em>x</em>)</span> given <span
+class="math inline"><em>x</em></span>.</p>
+<div class="fragment">
+<p>Examples:</p>
+<ul>
+<li>Given a database <span class="math inline"><em>D</em></span> and a
+query <span class="math inline"><em>Q</em></span>, outputs <span
+class="math inline"><em>Q</em>(<em>D</em>)</span>.</li>
+<li>Given a graph <span class="math inline"><em>G</em></span>, outputs
+all vertex covers of <span class="math inline"><em>G</em></span>.</li>
+<li>Given a CNF formula <span class="math inline"><em>F</em></span>,
+outputs every solution of <span
+class="math inline"><em>F</em></span>.</li>
+</ul>
+</div>
+</section>
+<section id="reasonable-problems" class="slide level2">
+<h2>Reasonable problems</h2>
+<p><strong>In this talk</strong>, <span
+class="math inline"><em>A</em></span> is an <span
+class="math inline"><em>N</em><em>P</em></span>-predicate, that is:</p>
+<ul>
+<li><span class="math inline"><em>y</em> ∈ <em>A</em>(<em>x</em>)</span>
+can be tested in <em>polynomial time</em>.</li>
+<li><span class="math inline"><em>y</em></span> is of size
+<em>polynomial</em> in the size of <span
+class="math inline"><em>x</em></span>.</li>
+</ul>
+<p>Previous examples have this property.</p>
+</section>
+<section id="complexity" class="slide level2">
+<h2>Complexity</h2>
+<p>How to measure the complexity of an algorithm solving an enumeration
+problem?</p>
+</section>
+<section id="total-time" class="slide level2">
+<h2>Total Time</h2>
+<p>Total time needed to output every solution.</p>
+<p>There can be <em>exponentially many</em>.</p>
+<p><span
+class="math inline"><em>E</em><em>n</em><em>u</em><em>m</em><em>A</em></span>
+is in <span
+class="math inline"><em>O</em><em>u</em><em>t</em><em>p</em><em>u</em><em>t</em><em>P</em></span>
+if it can be solved in time polynomial in:</p>
+<ul>
+<li><span class="math inline">|<em>x</em>|</span></li>
+<li>and <span class="math inline">|<em>A</em>(<em>x</em>)|</span></li>
+</ul>
+</section>
+<section id="delay" class="slide level2">
+<h2>Delay</h2>
+<p>Total time is not always satisfactory:</p>
+<ul>
+<li>Process solutions in a <em>stream</em>.</li>
+<li>Only <em>peek</em> at the solution set.</li>
+</ul>
+<p><em>Delay</em>: the longest time one has to wait between the output
+of two solutions.</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example:</h2>
+<p>Enumerate <span
+class="math inline">(<em>a</em>+<em>b</em>)<sup><em>n</em></sup></span>:</p>
+<ul>
+<li><em>Method 1</em>: Generates every words of length <span
+class="math inline"><em>k</em></span> inductively up to length <span
+class="math inline"><em>n</em></span> and output them.</li>
+<li><em>Method 2</em>: Start from <span
+class="math inline"><em>a</em><sup><em>n</em></sup></span>, output it
+and take next word (using Gray Code for example).</li>
+</ul>
+<div class="fragment">
+<p>Both have linear total time but delay in <em>Method 1</em> is
+<em>exponential</em>.</p>
+</div>
+</section>
+<section id="holy-delayp-grail" class="slide level2">
+<h2>Holy <span
+class="math inline"><em>D</em><em>e</em><em>l</em><em>a</em><em>y</em><em>P</em></span>
+Grail</h2>
+<p>One focus in enumeration complexity has been to design <em>algorithms
+with polynomial delay</em>.</p>
+<ul>
+<li>Maximal Independant Set of a graph <span class="citation"
+data-cites="tiernan1970efficient">[@tiernan1970efficient]</span></li>
+<li>Constant delay (in data) enumeration of acyclic conjunctive queries
+<span class="citation" data-cites="Bagan09">[@Bagan09]</span></li>
+</ul>
+</section>
+<section id="unpopular-opinion" class="slide level2">
+<h2>(Unpopular?) Opinion</h2>
+<p>Bounding the <em>delay</em> is not necessarily what we want.</p>
+<p>We want <em>guarantees</em>: by waiting <span
+class="math inline"><em>f</em>(<em>t</em>,<em>n</em>)</span>, <span
+class="math inline"><em>t</em></span> solutions have been output.</p>
+</section>
+<section id="linear-incremental-time" class="slide level2">
+<h2>Linear Incremental Time</h2>
+<div class="centered">
+<p><span
+class="math inline"><em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub></span></p>
+</div>
+<p>For every <span class="math inline"><em>t</em></span>, after <span
+class="math inline"><em>t</em> ⋅ <em>p</em>(<em>n</em>)</span> steps,
+the algorithm has output at least <span
+class="math inline"><em>t</em></span> solutions.</p>
+<p>We say that <span class="math inline"><em>p</em>(<em>n</em>)</span>
+is <em>the incremental delay</em>.</p>
+</section>
+<section id="delayp-vs-incp_1" class="slide level2">
+<h2><span
+class="math inline"><em>D</em><em>e</em><em>l</em><em>a</em><em>y</em><em>P</em></span>
+vs <span
+class="math inline"><em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub></span></h2>
+<p>Clearly <span
+class="math inline"><em>D</em><em>e</em><em>l</em><em>a</em><em>y</em><em>P</em> ⊆ <em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub></span>:
+after <span
+class="math inline"><em>d</em><em>e</em><em>l</em><em>a</em><em>y</em> × <em>t</em></span>,
+at least <span class="math inline"><em>t</em></span> solutions
+output.</p>
+<div class="fragment">
+<p>For the other way around: <span
+class="math inline">2<sup><em>n</em></sup></span> delay but incremental
+delay of <span class="math inline">2</span>.</p>
+<div class="centered">
+<p><img data-src="incvsdelay.svg" /></p>
+</div>
+</div>
+</section>
+<section id="naive-regularization" class="slide level2">
+<h2>Naive Regularization</h2>
+<p>Given an <span
+class="math inline"><em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub></span>-enumerator
+<span class="math inline"><em>E</em></span> with incremental delay <span
+class="math inline"><em>d</em></span>, one can regularize the delay
+using a queue to delay the output:</p>
+<div class="sourceCode" id="cb1" data-no-escape="1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>step <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> Queue()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(E <span class="kw">is</span> <span class="kw">not</span> finished):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    move(E)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    step <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> E outputs y:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        q.add(y)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> step <span class="op">==</span> d: </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># q is pulled every d steps, </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># this ensures the queue is not empty</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        output(q.pull())</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        step<span class="op">=</span><span class="dv">0</span></span></code></pre></div>
+</section>
+<section id="incp_1-delayp" class="slide level2">
+<h2><span
+class="math inline"><em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub> = <em>D</em><em>e</em><em>l</em><em>a</em><em>y</em><em>P</em></span></h2>
+<div class="right">
+<p>… but need to know the incremental delay.</p>
+</div>
+<div class="fragment">
+<p>Given:</p>
+<ul>
+<li>an <span
+class="math inline"><em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub></span>-enumerator
+E in incremental delay <span
+class="math inline"><em>p</em>(<em>n</em>)</span> as oracle</li>
+<li>an input <span class="math inline"><em>x</em></span> of size <span
+class="math inline"><em>n</em></span></li>
+</ul>
+<p>There is no RAM which enumerates the elements of E(x) in delay <span
+class="math inline">(|<em>E</em>(<em>x</em>)|−2)<em>p</em>(<em>n</em>)</span>.</p>
+</div>
+</section>
+<section id="unknown-delay" class="slide level2">
+<h2>Unknown Delay</h2>
+<p>From unknown incremental delay <span
+class="math inline"><em>d</em></span> to delay <span
+class="math inline"><em>O</em>(<em>d</em><sup>1 + <em>ϵ</em></sup>)</span>:</p>
+<div class="sourceCode" id="cb2" data-no-escape="1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>step <span class="op">=</span> <span class="dv">0</span>, t <span class="op">=</span> <span class="dv">0</span>, S <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> Queue() </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(E <span class="kw">is</span> <span class="kw">not</span> finished):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    move(E)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    step <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    t <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> E outputs y:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        q.add(y)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        S <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> step <span class="op">&gt;=</span> C(t<span class="op">/</span>S)<span class="op">^</span>(<span class="dv">1</span> <span class="op">+</span> epsilon): </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># C = 1/(1-2^(-epsilon))</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        output(q.pull())</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        step<span class="op">=</span><span class="dv">0</span></span></code></pre></div>
+</section>
+<section id="incp_1-delayp-1" class="slide level2">
+<h2><span
+class="math inline"><em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub> = <em>D</em><em>e</em><em>l</em><em>a</em><em>y</em><em>P</em></span></h2>
+<div class="right">
+<p>… but the memory may blow up.</p>
+</div>
+<div class="fragment">
+<div class="centered">
+<figure>
+<img data-src="incvsdelay.svg"
+alt="When the naive algorithm reaches the solution 2^n, it has output 2^{n}/2 solutions but stored 2^n of them." />
+<figcaption aria-hidden="true">When the naive algorithm reaches the
+solution <span class="math inline">2<sup><em>n</em></sup></span>, it has
+output <span class="math inline">2<sup><em>n</em></sup>/2</span>
+solutions but stored <span
+class="math inline">2<sup><em>n</em></sup></span> of them.</figcaption>
+</figure>
+</div>
+</div>
+</section></section>
+<section>
+<section id="geometric-amortization" class="title-slide slide level1">
+<h1>Geometric Amortization</h1>
+
+</section>
+<section id="main-contribution" class="slide level2">
+<h2>Main contribution</h2>
+<div class="centered">
+<p><span
+class="math inline"><em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub> = <em>D</em><em>e</em><em>l</em><em>a</em><em>y</em><em>P</em></span></p>
+<p>with <em>polynomial memory blow up</em>.</p>
+</div>
+</section>
+<section id="demo-first" class="slide level2">
+<h2>Demo first</h2>
+<div class="centered">
+<p><small>Meet Coussinet</small></p>
+<p><small><a
+href="http://florent.capelli.me/coussinet/">http://florent.capelli.me/coussinet/</a></small></p>
+</div>
+<iframe height="100%" scrolling="no" src="../coussinet/iframe.html?list=1x2x3x4x5x6x7x8x016x9">
+</iframe>
+</section>
+<section id="details" class="slide level2">
+<h2>Details</h2>
+<p>For every <span
+class="math inline"><em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub></span>-enumerator
+<span class="math inline"><em>E</em></span> with <span
+class="math inline"><em>N</em></span> solutions:</p>
+<ul>
+<li><span class="gold">incremental delay</span> <span
+class="math inline"><em>d</em></span>,</li>
+<li><span class="cyan">space</span> <span
+class="math inline"><em>s</em></span>,</li>
+<li><span class="magenta">total time</span> <span
+class="math inline"><em>T</em></span></li>
+</ul>
+<p>there exists a <span
+class="math inline"><em>D</em><em>e</em><em>l</em><em>a</em><em>y</em><em>P</em></span>-enumerator
+with</p>
+<ul>
+<li><span class="gold">delay</span> <span
+class="math inline"><em>O</em>(<em>d</em>log(<em>N</em>))</span></li>
+<li><span class="cyan">space</span> <span
+class="math inline"><em>O</em>(<em>s</em>log(<em>N</em>))</span></li>
+<li><span class="magenta">total time</span> <span
+class="math inline"><em>O</em>(<em>T</em>)</span></li>
+</ul>
+</section>
+<section id="geometric-amortization-1" class="slide level2">
+<h2>Geometric Amortization</h2>
+<ul>
+<li>Maintain <span
+class="math inline"><em>l</em> + 1 = ⌈log (<em>N</em>)⌉</span>
+simulations <span
+class="math inline"><em>E</em><sub>0</sub>, …, <em>E</em><sub><em>l</em></sub></span>
+of <span class="math inline"><em>E</em></span></li>
+<li><span class="math inline"><em>E</em><sub><em>i</em></sub></span>
+outputs solutions for steps in <span
+class="math inline">[2<sup><em>i</em></sup><em>d</em>; 2<sup><em>i</em> + 1</sup><em>d</em>[</span>.</li>
+<li><span class="math inline"><em>E</em><sub><em>i</em> + 1</sub></span>
+“moves <em>faster</em>” than <span
+class="math inline"><em>E</em><sub><em>i</em></sub></span>.</li>
+</ul>
+</section>
+<section id="faster-how" class="slide level2">
+<h2>Faster how?</h2>
+<ul>
+<li><span class="math inline"><em>E</em><sub><em>i</em></sub></span>
+moves by at most <span class="math inline">2<em>d</em></span>
+steps.</li>
+<li>If <span class="math inline"><em>E</em><sub><em>i</em></sub></span>
+finds a solution in its zone, outputs it and proceed back with <span
+class="math inline"><em>E</em><sub><em>l</em></sub></span>.</li>
+<li>Otherwise, proceed with <span
+class="math inline"><em>E</em><sub><em>i</em> − 1</sub></span>.</li>
+<li>Stops when <span class="math inline"><em>E</em><sub>0</sub></span>
+is out of its zone.</li>
+</ul>
+<iframe height="100%" scrolling="no" src="../coussinet/iframe.html?list=1x2x3x4x5x6x7x8x016x9">
+</iframe>
+</section>
+<section id="key-lemmas" class="slide level2">
+<h2>Key Lemmas</h2>
+<ol type="1">
+<li>If <span
+class="math inline"><em>E</em><sub>0</sub>, …, <em>E</em><sub><em>i</em></sub></span>
+have output <span class="math inline"><em>k</em></span> solutions, <span
+class="math inline"><em>E</em><sub><em>i</em> + 1</sub></span> has moved
+by at least <span class="math inline">2<em>d</em><em>k</em></span>
+steps.</li>
+<li>There are at least <span
+class="math inline">2<sup><em>i</em></sup></span> solutions in <span
+class="math inline">[0;2<sup><em>i</em></sup><em>d</em>]</span>.</li>
+</ol>
+<div class="fragment">
+<p>When <span class="math inline"><em>E</em><sub>0</sub></span> is
+finished, <span
+class="math inline"><em>E</em><sub><em>i</em></sub></span> has moved by
+at least <span
+class="math inline">2<sup><em>i</em> + 1</sup><em>d</em></span> steps:
+<em>it has explored all its zone</em>.</p>
+</div>
+</section>
+<section id="delay-1" class="slide level2">
+<h2>Delay?</h2>
+<p>Between two outputs: at most <span
+class="math inline"><em>l</em> × 2<em>d</em></span> simulated steps.</p>
+<p><em>Cost of simulation:</em> depends on the model of computation
+(here RAM with uniform cost model).</p>
+<div class="fragment">
+<ul>
+<li>“Easy”: known bounds on delay, space and number of solutions used by
+the algorithm.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Works even without prior knowledge (slightly worst bounds). <em>Need
+to know the delay still</em>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Trickiest part:
+<ul>
+<li>Keeping track of the number of steps simulated.</li>
+<li>Allocating the memory for new simulations.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="additional-limit" class="slide level2">
+<h2>Additional Limit</h2>
+<p>Two hard limits:</p>
+<ul>
+<li>Need to know the incremental delay</li>
+<li>The order of the solutions is changed</li>
+</ul>
+<div class="fragment">
+<p>Given:</p>
+<ul>
+<li>an <span
+class="math inline"><em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub></span>-enumerator
+E as oracle</li>
+<li>an input <span class="math inline"><em>x</em></span></li>
+</ul>
+<p>There is no RAM which enumerates the elements of E(x) in the same
+order as E in polynomial delay and polynomial space.</p>
+</div>
+</section></section>
+<section>
+<section id="generalizations-and-applications"
+class="title-slide slide level1">
+<h1>Generalizations and Applications</h1>
+
+</section>
+<section id="incremental-time" class="slide level2">
+<h2>Incremental time</h2>
+<p>The approach generalizes to collapse the following classes:</p>
+<ul>
+<li><em>Usual <span class="math inline"><em>k</em></span>-incremental
+time</em>: the delay between solution <span
+class="math inline"><em>i</em></span> and <span
+class="math inline"><em>i</em> + 1</span> is <span
+class="math inline"><em>O</em>(<em>p</em><em>o</em><em>l</em><em>y</em>(<em>n</em>)<em>i</em><sup><em>k</em></sup>)</span>.</li>
+<li><em>Relaxed <span
+class="math inline">(<em>k</em>+1)</span>-incremental time</em>: for
+every <span class="math inline"><em>i</em></span>, at least <span
+class="math inline"><em>i</em></span> solutions have been output after
+time <span
+class="math inline"><em>p</em><em>o</em><em>l</em><em>y</em>(<em>n</em>)<em>i</em><sup><em>k</em> + 1</sup></span>.</li>
+</ul>
+</section>
+<section id="easier-proofs-for-delayp" class="slide level2">
+<h2>Easier proofs for <span
+class="math inline"><em>D</em><em>e</em><em>l</em><em>a</em><em>y</em><em>P</em></span></h2>
+<div class="right">
+<p><small>… in theory.</small></p>
+</div>
+<p><span
+class="math inline"><em>I</em><em>n</em><em>c</em><em>P</em><sub>1</sub></span>
+requirements are weaker than <span
+class="math inline"><em>D</em><em>e</em><em>l</em><em>a</em><em>y</em><em>P</em></span>.</p>
+<p><em>In practice</em>: we have few examples where it helps, any
+idea?</p>
+</section>
+<section id="applications" class="slide level2">
+<h2>Applications</h2>
+<p><em>Branch and bound</em> based enumeration algorithms (flashlight)
+with <span class="gold">average delay</span> <span
+class="math inline"><em>d</em></span> can be modified to:</p>
+<ul>
+<li>to have <span class="gold">incremental delay</span> <span
+class="math inline"><em>d</em></span> (naive amortization)</li>
+<li>to have <span class="gold">delay</span> <span
+class="math inline"><em>d</em>log (<em>N</em>)</span> (geometric
+amortization)</li>
+</ul>
+<div class="fragment">
+<p>Enumeration of models of a DNF in delay <span
+class="math inline"><em>n</em><sup>2</sup><em>m</em><sup>1 − log<sub>3</sub>(2)</sup></span>.</p>
+</div>
+<div class="fragment">
+<p>Enumeration of k-colorable graphs in polynomial time and polynomial
+space.</p>
+</div>
+</section>
+<section id="take-away" class="slide level2">
+<h2>Take away</h2>
+<p>The right notion is incremental delay.</p>
+<div class="fragment">
+<p>Do not use our method!</p>
+</div>
+</section>
+<section id="thanks-you-for-your-attention" class="slide level2">
+<h2>Thanks you for your attention!</h2>
+</section>
+<section id="bibliography" class="slide level2"
+data-visibility="hidden">
+<h2 data-visibility="hidden">Bibliography</h2>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+        // Push each slide change to the browser history
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: true,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        navigationMode: 'linear',
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Transition style
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1200,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://unpkg.com/reveal.js@^4//lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://unpkg.com/reveal.js@^4//plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@^4//plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

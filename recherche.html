@@ -62,7 +62,6 @@
       </br>
       <li> Study of the <a href="https://arxiv.org/abs/2309.17032">computational power of neural networks</a>. Several strict hierarchies are established, by considering the Kolmogorov complexity of some of their parameters.</li>
       <li> A <a href="space_complexity.pdf">few thoughts</a> on space in enumeration complexity, presented at WEPA 2022. Mostly deal with elimination of duplicates without space and separation of space complexity classes.</li>
-      <li> A <a href="https://arxiv.org/abs/2002.07606">paper</a> on finding periodic schedules for messages going back and forth on a single shared link without using waiting time. <a href="Greedy.zip">Source code</a> of the simulations.</li>
       <li>A <a href="https://arxiv.org/abs/1801.07029">detailed study</a> of the case with waiting time, extending the results of the ICT paper "Deterministic Scheduling of Periodic Messages for Cloud RAN".</li>
       <li> An <a href="roadef_scheduling.pdf">abstract</a>, presented at ROADEF 2024, on a method to solve the periodic scheduling in polynomial time on a single contention point.
       <li> An <a href="roadef_vehicle.pdf">abstract</a>, presented at ROADEF 2024, on a tentative method to use learning to solve a vehicle routing problem with pollution constraints.
@@ -71,6 +70,34 @@
    </ul>
 
 <h2><a name="Published Papers">Published Papers</a></h2>
+
+
+<b>"Scheduling periodic messages on a shared link"</b>,<br/>
+Maël Guiraud, Yann Strozecki, Journal of Scheduling 2024.
+
+<br> [ <a href="https://arxiv.org/abs/2002.07606"  target="_blank">ArXiv</a> |
+      <a href="Greedy.zip">Code</a> |
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#GS24_bibtex').slideUp('fast'); $('#GS24_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#GS24_abstract').slideUp('fast'); $('#GS24_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="GS24_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+    Cloud-RAN is a recent architecture for mobile networks where the processing units are located in distant data centers while, until now, they were attached to antennas. The main challenge, to fulfill protocol constraints, is to guarantee low latency for the periodic messages sent from each antenna to its processing unit and back. The problem we address is to find a periodic sending scheme of these messages without contention nor buffering, when all messages are of the same size and the period is fixed.
+    We study the periodic message assignment problem modeling this situation on a common topology, where contention arises from a single link shared by all antennas. The problem is reminiscent of coupled-task scheduling, but the periodicity introduces a new twist. We study how the problem behaves with regard to the load of the shared link. The main contributions are polynomial-time algorithms which always find a solution for an arbitrary size of messages and load at most 2/5 or for messages of size one and load at most ϕ−1, the golden ratio conjugate. We also prove that a randomized greedy algorithm finds a solution on almost all instances with high probability, explaining why most greedy algorithms work so well in practice.  
+    </div>
+    <div style="display: none;" id="GS24_bibtex" class="bibtex">
+    <h4 style="display: none;" class="script_hide">BibTeX</h4>
+    <pre>
+
+
+  </pre>
+    </div>
+    <br /><br>
 
 
 <b>"Geometric Amortization of Enumeration Algorithms"</b>,<br/>

@@ -62,13 +62,41 @@
       </br>
       <li> A <a href="space_complexity.pdf">few thoughts</a> on space in enumeration complexity, presented at WEPA 2022. Mostly deal with elimination of duplicates without space and separation of space complexity classes.</li>
       <li> An <a href="roadef_scheduling.pdf">abstract</a>, presented at ROADEF 2024, on a method to solve the periodic scheduling in polynomial time on a single contention point.
-      <li> An <a href="roadef_vehicle.pdf">abstract</a>, presented at ROADEF 2024, on a tentative method to use learning to solve a vehicle routing problem with pollution constraints.
       <li> The use in chemistry of our tool for the generation of planar graphs with constraints: see the following <a href= "Insilico.pdf">working paper</a>. </li>
       <li>Decomposition-width: extending clique-width to hypergraphs. Extension of chapter 6 of my PHD's thesis. <a href="hypergraph_decomposition.pdf">Short version</a>.</li>
    </ul>
 
 <h2><a name="Published Papers">Published Papers</a></h2>
 
+
+<b>"Demand Selection for VRP with Emission Quota"</b>,<br/>
+Dominique Barth, Farid Najar, Yann Strozecki, . 
+Full article extending the <a href="roadef_vehicle.pdf">abstract</a> presented at ROADEF 2024. 
+
+<br> [ <a href="https://arxiv.org/abs/2505.19315"  target="_blank">ArXiv</a>|
+  <span style="display: inline;" class="script_show">
+
+    <a class="pub_link" href="#" onclick="$('#BNS25_bibtex').slideUp('fast'); $('#BNS25_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#BNS25_abstract').slideUp('fast'); $('#BNS25_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="BNS25_abstract" class="abstract">
+
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>
+    Combinatorial optimization (CO) problems are traditionally addressed using Operations Research (OR) methods, including metaheuristics. In this study, we introduce a demand selection problem for the Vehicle Routing Problem (VRP) with an emission quota, referred to as QVRP. The objective is to minimize the number of omitted deliveries while respecting the pollution quota. We focus on the demand selection part, called Maximum Feasible Vehicle Assignment (MFVA), while the construction of a routing for the VRP instance is solved using classical OR methods. We propose several methods for selecting the packages to omit, both from machine learning (ML) and OR. Our results show that, in this static problem setting, classical OR-based methods consistently outperform ML-based approaches.  
+    </div>
+    <div style="display: none;" id="BNS25_bibtex" class="bibtex">
+    <h4 style="display: none;" class="script_hide">BibTeX</h4>
+    <pre>
+ @inproceedings{najardemand,
+  title={Demand Selection for VRP with Emission Quota},
+  author={Najar, Farid and Barth, Dominique and Strozecki, Yann},
+  booktitle={THE 19TH LEARNING AND INTELLIGENT OPTIMIZATION CONFERENCE}
+}
+  </pre>
+    </div>
+    <br /><br>
 
 <b>"Deterministic Scheduling of Periodic Messages for Low Latency in Cloud RAN"</b>,<br/>
 Dominique Barth, Maël Guiraud, Yann Strozecki, Journal of Network and Systems Management, 2025. Long version of the ICT paper, with many more algorithms, complexity results and experiments.

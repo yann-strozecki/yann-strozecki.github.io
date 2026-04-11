@@ -60,6 +60,7 @@
     <h2><span><a name ="Submitted Papers">Working Papers and Submitted Papers</a></span></h2>
     <ul>
       </br>
+      <li> A <a href="https://arxiv.org/abs/2603.13279">paper</a> on choosing clients of a VRP to serve in an online fashion, using classical heuristics and learning methods.</li>
       <li> A <a href="space_complexity.pdf">few thoughts</a> on space in enumeration complexity, presented at WEPA 2022. Mostly deal with elimination of duplicates without space and separation of space complexity classes.</li>
       <li> An <a href="roadef_scheduling.pdf">abstract</a>, presented at ROADEF 2024, on a method to solve the periodic scheduling in polynomial time on a single contention point.
       <li> The use in chemistry of our tool for the generation of planar graphs with constraints: see the following <a href= "Insilico.pdf">working paper</a>. </li>
@@ -69,14 +70,37 @@
 <h2><a name="Published Papers">Published Papers</a></h2>
 
 
+<b>"Computational Generation of Substrate-Specific
+Molecular Cages"</b>,<br/> 
+Noé Demange, Yann Strozecki, Sandrine Vial, SEA 2026. 
+
+<br> [ <a href=""  target="_blank">ArXiv</a>|
+<a href="https://archive.softwareheritage.org/browse/directory/4724ee746285e388bfbb126e84babf8a21e1aecc/"  target="_blank">Code</a> |
+  <span style="display: inline;" class="script_show">
+    <a class="pub_link" href="#" onclick="$('#DSV26_bibtex').slideUp('fast'); $('#DSV26_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#DSV26_abstract').slideUp('fast'); $('#DSV26_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="DSV26_abstract" class="abstract">
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>  
+    In this paper, we propose a method to build molecular cages designed to capture a specific substrate. We model a cage as a graph of atoms with coordinates in space, and several constraints on their edges (degree, length and angle). We use a simple method to place binding patterns which are able to interact with certain parts of the substrate. We then propose an algorithm which considers all possible ways of connecting these binding patterns and try to construct the smallest possible molecular paths realizing these connections. We investigate many variants of our method in order to obtain the most efficient algorithm, able to build cages of more than a hundred atoms.
+    </div>
+    <div style="display: none;" id="DSV26_bibtex" class="bibtex">
+    <h4 style="display: none;" class="script_hide">BibTeX</h4>
+    <pre>
+  </pre>
+    </div>
+    <br /><br>
 
 
-<b>"Learning-Guided Simulated Annealing for theCapacitated Vehicle Routing Problem"</b>,<br/> 
+
+<b>"Learning-Guided Simulated Annealing for the Capacitated Vehicle Routing Problem"</b>,<br/> 
 Jules Andretti, Jérémie Cabessa, Yann Strozecki, ICAPS 2026. 
 
 <br> [ <a href=""  target="_blank">ArXiv</a>|
+<a href="https://github.com/JAndretti/Learning-Guided-Simulated-Annealing-for-the-Capacitated-Vehicle-Routing"  target="_blank">Code</a> |
   <span style="display: inline;" class="script_show">
-
     <a class="pub_link" href="#" onclick="$('#ACS26_bibtex').slideUp('fast'); $('#ACS26_abstract').slideToggle('fast'); return false;">Abstract</a> 
     | <a class="pub_link" href="#" onclick="$('#ACS26_abstract').slideUp('fast'); $('#ACS26_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
    </span> ]
@@ -85,11 +109,12 @@ Jules Andretti, Jérémie Cabessa, Yann Strozecki, ICAPS 2026.
 
     <h4 style="display: none;" class="script_hide">Abstract</h4>
     <br>  
+    The Capacitated Vehicle Routing Problem (CVRP) is a fundamental  combinatorial  optimization  challenge  with  broad industrial relevance. Classical metaheuristics such as Simulated Annealing (SA) offer asymptotic convergence guarantees but suffer from inefficient random neighborhood exploration. Conversely, recent deep learning approaches generate solutions rapidly but often struggle to generalize beyond the instance sizes encountered during training. In this paper, we bridge this gap by proposing Learning-Guided Simulated An-nealing (LG-SA), a hybrid framework that augments SA with a very lightweight neural module, trained to select promising neighboring solutions instead of relying on uniform sampling.  The  move-selection  policy  is  learned  through  reinforcement learning (RL) using Proximal Policy Optimization(PPO). Through extensive experiments, we analyze the stability of the model as well as the impact of diverse feasibility mechanisms, initialization strategies, neighborhood operators, and action parameterizations (joint vs. conditional). We further show that LG-SA excels at finding high quality solutions rapidly. In addition to achieving a 42.5% cost reductionover classical SA and generalizing well to larger instances,LG-SA  outperforms  or  performs  on  par  with  widely  used methods like OR-Tools, attention-based GNNs, and advancedRL methods within comparable or shorter timeframes.
     </div>
     <div style="display: none;" id="ACS26_bibtex" class="bibtex">
     <h4 style="display: none;" class="script_hide">BibTeX</h4>
     <pre>
- The Capacitated Vehicle Routing Problem (CVRP) is a fun-damental  combinatorial  optimization  challenge  with  broadindustrial relevance. Classical metaheuristics such as Simu-lated Annealing (SA) offer asymptotic convergence guaran-tees but suffer from inefficient random neighborhood explo-ration. Conversely, recent deep learning approaches generatesolutions rapidly but often struggle to generalize beyond theinstance sizes encountered during training. In this paper, webridge this gap by proposing Learning-Guided Simulated An-nealing (LG-SA), a hybrid framework that augments SA witha very lightweight neural module, trained to select promis-ing neighboring solutions instead of relying on uniform sam-pling.  The  move-selection  policy  is  learned  through  rein-forcement learning (RL) using Proximal Policy Optimization(PPO). Through extensive experiments, we analyze the sta-bility of the model as well as the impact of diverse feasibil-ity mechanisms, initialization strategies, neighborhood oper-ators, and action parameterizations (joint vs. conditional). Wefurther show that LG-SA excels at finding high-quality solu-tions rapidly. In addition to achieving a 42.5% cost reductionover classical SA and generalizing well to larger instances,LG-SA  outperforms  or  performs  on  par  with  widely  usedmethods like OR-Tools, attention-based GNNs, and advancedRL methods within comparable or shorter timeframes.
+
   </pre>
     </div>
     <br /><br>

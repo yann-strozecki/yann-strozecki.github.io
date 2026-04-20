@@ -70,6 +70,46 @@
 <h2><a name="Published Papers">Published Papers</a></h2>
 
 
+<b>"Gray Codes With Constant Delay and Constant Auxiliary Space"</b>,<br/> 
+Antoine Amarilli, Claire David, Nadime Francis, Victor Marsault, Mikaël Monet, Yann Strozecki, ICALP 2026. 
+
+<br> [ <a href="https://arxiv.org/abs/2602.11791"  target="_blank">ArXiv</a>|
+  <span style="display: inline;" class="script_show">
+    <a class="pub_link" href="#" onclick="$('#ADFMMS26_bibtex').slideUp('fast'); $('#ADFMMS26_abstract').slideToggle('fast'); return false;">Abstract</a> 
+    | <a class="pub_link" href="#" onclick="$('#ADFMMS26_abstract').slideUp('fast'); $('#ADFMMS26_bibtex').slideToggle('fast'); return false;">BibTeX</a> 
+   </span> ]
+  
+  <div style="display: none;" id="ADFMMS26_abstract" class="abstract">
+    <h4 style="display: none;" class="script_hide">Abstract</h4>
+    <br>  
+    We give the first two algorithms to enumerate all binary words of
+    {0,1}^l (like Gray codes) while ensuring that the delay and the auxiliary space
+    is independent from l, i.e., constant time for each word, and constant
+    memory in addition to the l bits storing the current word.
+    Our algorithms are given in two new computational models: tape machines and deque machines. 
+    We also study more restricted models, queue machines and stack machines, and show that they cannot enumerate all binary words with constant auxiliary space, even with unrestricted delay.
+    
+    A tape machine is a Turing machine that stores the current binary word on a single working tape of length l.
+   
+    The machine has a single head and must edit its tape to reach all possible words of {0,1}^l, and output them (in unit time, by entering special output states), with no duplicates. We construct a tape machine that achieves this task with constant delay between consecutive outputs, which implies that the machine implements a so-called skew-tolerant quasi-Gray code. We then construct a more involved tape machine that implements a Gray code.
+
+    A deque machine stores the current binary word on a double-ended queue of length l, and stores a constant-size internal state. 
+    It works as a tape machine, except that it modifies the content of the deque by performing push and pop operations on the endpoints.
+    We construct deque machines that enumerate all words of {0,1}^l with constant-delay.  The main technical challenge in this model is to correctly detect when enumeration has finished. 
+
+    Our work on deque machine is also motivated by other contexts in which
+    endpoint modifications occur naturally. In particular, our result is a first
+    step towards enumerating walks in directed graphs with constant delay
+    and constant auxiliary space, addressing a core task in modern graph database query processing.
+    </div>
+    <div style="display: none;" id="ADFMMS26_bibtex" class="bibtex">
+    <h4 style="display: none;" class="script_hide">BibTeX</h4>
+    <pre>
+  </pre>
+    </div>
+    <br /><br>
+
+
 <b>"From Amortized to Worst Case Delay in Enumeration Algorithms"</b>,<br/> 
 Florent Capelli, Yann Strozecki, Computational Complexity 2026. 
 Extended version of the STACS 2023 paper with better adapatative algorithms, better lower bounds and an improved framework.
@@ -99,7 +139,7 @@ Extended version of the STACS 2023 paper with better adapatative algorithms, bet
 Molecular Cages"</b>,<br/> 
 Noé Demange, Yann Strozecki, Sandrine Vial, SEA 2026. 
 
-<br> [ <a href=""  target="_blank">ArXiv</a>|
+<br> [ <a href="https://arxiv.org/abs/2604.11060"  target="_blank">ArXiv</a>|
 <a href="https://archive.softwareheritage.org/browse/directory/4724ee746285e388bfbb126e84babf8a21e1aecc/"  target="_blank">Code</a> |
   <span style="display: inline;" class="script_show">
     <a class="pub_link" href="#" onclick="$('#DSV26_bibtex').slideUp('fast'); $('#DSV26_abstract').slideToggle('fast'); return false;">Abstract</a> 

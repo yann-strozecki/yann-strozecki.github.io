@@ -80,14 +80,16 @@ margin : 5px 15px 6px;
 margin-bottom : 15px;
 }
  
-.profils { display: flex; gap: 1rem; align-items: center; }
-.profils a {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 2.4rem; height: 2.4rem; border-radius: 6px;
-  color: #333; text-decoration: none;
-  transition: color .15s ease, background-color .15s ease;
+.profils { --gap: 1.2rem; --sep: #d8d8d8; display: flex; align-items: center; gap: var(--gap); }
+.profils a { position: relative; /* ...reste inchangé... */ }
+.profils a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(-0.5 * var(--gap) - 0.5px);
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.1rem;
+  background-color: var(--sep);
 }
-.profils a:hover, .profils a:focus-visible { color: #fff; background-color: #2b5797; }
-.profils i { font-size: 1.5rem; line-height: 1; }
-
 

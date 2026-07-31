@@ -80,6 +80,14 @@ margin : 5px 15px 6px;
 margin-bottom : 15px;
 }
  
-
+.profils { display: flex; gap: 1rem; align-items: center; }
+.profils a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.4rem; height: 2.4rem; border-radius: 6px;
+  color: #333; text-decoration: none;
+  transition: color .15s ease, background-color .15s ease;
+}
+.profils a:hover, .profils a:focus-visible { color: #fff; background-color: #2b5797; }
+.profils i { font-size: 1.5rem; line-height: 1; }
 
 
